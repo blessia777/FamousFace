@@ -460,6 +460,8 @@ function showFinalResult() {
         "famousFaceLatestScore",
         JSON.stringify(playerScore)
     );
+    // Save score to Supabase
+saveScoreToSupabase(playerScore);
 
 
     questionElement.textContent =
@@ -508,4 +510,58 @@ function restartQuiz() {
 
     showQuestion();
 
+}
+async function saveScoreToSupabase(playerScore) {
+
+    try {
+
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/scores`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                    "apikey": SUPABASE_KEY,
+                    "Authorization": `Bearer ${SUPABASE_KEY}`,
+                    "Prefer": "return=minimal"
+                },
+
+                body: JSON.stringify({
+                    player_name: playerScore.name,
+                    category: playerScore.category,
+                    score: playerScore.score,
+                    total_questions: playerScore.total,
+                    percentage: playerScore.percentage
+                })
+            }
+        );
+
+
+        if (!response.ok) {
+
+            const errorText =
+                await response.text();
+
+            console.error(
+                "Supabase error:",
+                errorText
+            );
+
+            return;
+        }
+
+
+        console.log(
+            "Score successfully saved to Supabase!"
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Could not save score:",
+            error
+        );
+
+    }
 }
