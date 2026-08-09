@@ -11,7 +11,6 @@ const quizData = {
             ],
             correct: "Michael Jackson"
         },
-
         {
             question: "Which singer is known for the song 'Hello'?",
             answers: [
@@ -22,7 +21,6 @@ const quizData = {
             ],
             correct: "Adele"
         },
-
         {
             question: "Who was the lead singer of Queen?",
             answers: [
@@ -33,7 +31,6 @@ const quizData = {
             ],
             correct: "Freddie Mercury"
         },
-
         {
             question: "Which instrument has black and white keys?",
             answers: [
@@ -44,7 +41,6 @@ const quizData = {
             ],
             correct: "Piano"
         },
-
         {
             question: "Which band recorded the song 'Yellow Submarine'?",
             answers: [
@@ -57,9 +53,7 @@ const quizData = {
         }
     ],
 
-
     movies: [
-
         {
             question: "Who played Jack in Titanic?",
             answers: [
@@ -70,7 +64,6 @@ const quizData = {
             ],
             correct: "Leonardo DiCaprio"
         },
-
         {
             question: "Which film features the character Harry Potter?",
             answers: [
@@ -81,7 +74,6 @@ const quizData = {
             ],
             correct: "Harry Potter"
         },
-
         {
             question: "Who played Iron Man in the Marvel films?",
             answers: [
@@ -92,7 +84,6 @@ const quizData = {
             ],
             correct: "Robert Downey Jr."
         },
-
         {
             question: "Which movie won the Academy Award for Best Picture in 1998?",
             answers: [
@@ -103,7 +94,6 @@ const quizData = {
             ],
             correct: "Titanic"
         },
-
         {
             question: "Who directed the movie Jurassic Park?",
             answers: [
@@ -114,23 +104,14 @@ const quizData = {
             ],
             correct: "Steven Spielberg"
         }
-
     ],
 
-
     sports: [
-
         {
             question: "How many players are on a soccer team on the field?",
-            answers: [
-                "9",
-                "10",
-                "11",
-                "12"
-            ],
+            answers: ["9", "10", "11", "12"],
             correct: "11"
         },
-
         {
             question: "Which sport is associated with Wimbledon?",
             answers: [
@@ -141,7 +122,6 @@ const quizData = {
             ],
             correct: "Tennis"
         },
-
         {
             question: "Which country is famous for the Olympic sprinter Usain Bolt?",
             answers: [
@@ -152,18 +132,11 @@ const quizData = {
             ],
             correct: "Jamaica"
         },
-
         {
             question: "How many rings are on the Olympic symbol?",
-            answers: [
-                "4",
-                "5",
-                "6",
-                "7"
-            ],
+            answers: ["4", "5", "6", "7"],
             correct: "5"
         },
-
         {
             question: "Which sport uses a racket and shuttlecock?",
             answers: [
@@ -174,12 +147,9 @@ const quizData = {
             ],
             correct: "Badminton"
         }
-
     ],
 
-
     art: [
-
         {
             question: "Who painted the Mona Lisa?",
             answers: [
@@ -190,7 +160,6 @@ const quizData = {
             ],
             correct: "Leonardo da Vinci"
         },
-
         {
             question: "Who painted The Starry Night?",
             answers: [
@@ -201,7 +170,6 @@ const quizData = {
             ],
             correct: "Vincent van Gogh"
         },
-
         {
             question: "Which artist is associated with Cubism?",
             answers: [
@@ -212,7 +180,6 @@ const quizData = {
             ],
             correct: "Pablo Picasso"
         },
-
         {
             question: "Who painted the ceiling of the Sistine Chapel?",
             answers: [
@@ -223,7 +190,6 @@ const quizData = {
             ],
             correct: "Michelangelo"
         },
-
         {
             question: "Which movement is associated with Claude Monet?",
             answers: [
@@ -234,12 +200,9 @@ const quizData = {
             ],
             correct: "Impressionism"
         }
-
     ],
 
-
     history: [
-
         {
             question: "Who was the first person to walk on the Moon?",
             answers: [
@@ -250,7 +213,6 @@ const quizData = {
             ],
             correct: "Neil Armstrong"
         },
-
         {
             question: "Which ancient civilization built the pyramids at Giza?",
             answers: [
@@ -261,7 +223,6 @@ const quizData = {
             ],
             correct: "Ancient Egyptians"
         },
-
         {
             question: "Who was known as the Maid of Orléans?",
             answers: [
@@ -272,7 +233,6 @@ const quizData = {
             ],
             correct: "Joan of Arc"
         },
-
         {
             question: "Which city was buried by Mount Vesuvius?",
             answers: [
@@ -283,7 +243,6 @@ const quizData = {
             ],
             correct: "Pompeii"
         },
-
         {
             question: "Who was the first president of the United States?",
             answers: [
@@ -294,48 +253,50 @@ const quizData = {
             ],
             correct: "George Washington"
         }
-
     ]
-
 };
 
 
-// Get selected category from the URL
-
-const urlParams =
-    new URLSearchParams(window.location.search);
-
-const category =
-    urlParams.get("category") || "music";
+// Get selected category
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category") || "music";
 
 
-// Get questions for selected category
-
-const questions =
-    quizData[category] || quizData.music;
+// Get questions
+const questions = quizData[category] || quizData.music;
 
 
 // Quiz variables
-
 let currentQuestion = 0;
-
 let score = 0;
+let playerName = "";
 
 
 // Page elements
+const questionElement = document.getElementById("question");
+const answersElement = document.getElementById("answers");
+const resultElement = document.getElementById("result");
 
-const questionElement =
-    document.getElementById("question");
+const registrationElement =
+    document.getElementById("playerRegistration");
 
-const answersElement =
-    document.getElementById("answers");
+const quizAreaElement =
+    document.getElementById("quizArea");
 
-const resultElement =
-    document.getElementById("result");
+const playerNameInput =
+    document.getElementById("playerName");
+
+const startButton =
+    document.getElementById("startButton");
+
+const nameError =
+    document.getElementById("nameError");
+
+const playerWelcome =
+    document.getElementById("playerWelcome");
 
 
-// Display category name
-
+// Category names
 const categoryNames = {
     music: "🎵 Music",
     movies: "🎬 Movies",
@@ -345,12 +306,46 @@ const categoryNames = {
 };
 
 
+// Display category
 document.querySelector("header p").textContent =
     categoryNames[category] + " Quiz";
 
 
-// Show question
+// Start quiz
+startButton.addEventListener("click", startQuiz);
 
+
+function startQuiz() {
+
+    const enteredName =
+        playerNameInput.value.trim();
+
+    if (!enteredName) {
+
+        nameError.textContent =
+            "Please enter your name before starting.";
+
+        return;
+    }
+
+    playerName = enteredName;
+
+    nameError.textContent = "";
+
+    registrationElement.style.display = "none";
+    quizAreaElement.style.display = "block";
+
+    playerWelcome.textContent =
+        "Good luck, " + playerName + "! 🌟";
+
+    currentQuestion = 0;
+    score = 0;
+
+    showQuestion();
+}
+
+
+// Show question
 function showQuestion() {
 
     const current =
@@ -363,7 +358,6 @@ function showQuestion() {
 
     resultElement.innerHTML = "";
 
-
     current.answers.forEach(answer => {
 
         const button =
@@ -371,13 +365,11 @@ function showQuestion() {
 
         button.textContent = answer;
 
-
         button.onclick = function () {
 
             checkAnswer(answer, button);
 
         };
-
 
         answersElement.appendChild(button);
 
@@ -387,16 +379,13 @@ function showQuestion() {
 
 
 // Check answer
-
 function checkAnswer(answer, clickedButton) {
 
     const correctAnswer =
         questions[currentQuestion].correct;
 
-
     const allButtons =
         answersElement.querySelectorAll("button");
-
 
     allButtons.forEach(button => {
 
@@ -432,7 +421,6 @@ function checkAnswer(answer, clickedButton) {
 
         currentQuestion++;
 
-
         if (currentQuestion < questions.length) {
 
             showQuestion();
@@ -451,13 +439,27 @@ function checkAnswer(answer, clickedButton) {
 
 
 // Final result
-
 function showFinalResult() {
 
     const percentage =
         Math.round(
             (score / questions.length) * 100
         );
+
+
+    // Save player's latest score locally
+    const playerScore = {
+        name: playerName,
+        category: category,
+        score: score,
+        total: questions.length,
+        percentage: percentage
+    };
+
+    localStorage.setItem(
+        "famousFaceLatestScore",
+        JSON.stringify(playerScore)
+    );
 
 
     questionElement.textContent =
@@ -469,7 +471,9 @@ function showFinalResult() {
 
     resultElement.innerHTML = `
 
-        <h2>Your Score</h2>
+        <h2>Well done, ${playerName}! 🎉</h2>
+
+        <h3>Your Score</h3>
 
         <p>
             ${score} out of ${questions.length}
@@ -495,18 +499,13 @@ function showFinalResult() {
 
 
 // Restart quiz
-
 function restartQuiz() {
 
     currentQuestion = 0;
-
     score = 0;
+
+    quizAreaElement.style.display = "block";
 
     showQuestion();
 
 }
-
-
-// Start quiz
-
-showQuestion();
