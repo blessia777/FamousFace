@@ -16,19 +16,42 @@ export default async function handler(request) {
                 ? category
                 : "entertainment";
 
-        const apiUrl =
-            `https://gnews.io/api/v4/top-headlines` +
-            `?category=${selectedCategory}` +
-            `&lang=en` +
-            `&max=6` +
-            `&apikey=${process.env.GNEWS_API_KEY}`;
+        const apiKey = process.env.GNEWS_API_KEY;
 
-        const response = await fetch(apiUrl);
-
-        if (!response.ok) {
+        if (!apiKey) {
             return new Response(
                 JSON.stringify({
-                    error: "News service returned an error."
+                    error: "GNEWS_API_KEY is not available in Netlify."
+                }),
+                {
+                    status: 500,
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            );
+        }
+
+        const apiUrl = new URL(
+            "https://gnews.io/api/v4/top-headlines"
+        );
+
+        apiUrl.searchParams.set("category", selectedCategory);
+        apiUrl.searchParams.set("lang", "en");
+        apiUrl.searchParams.set("max", "5");
+        apiUrl.searchParams.set("apikey", apiKey);
+
+        const response = await fetch(apiUrl.toString());
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.error("GNews error:", data);
+
+            return new Response(
+                JSON.stringify({
+                    error: "GNews API error",
+                    details: data
                 }),
                 {
                     status: response.status,
@@ -39,15 +62,12 @@ export default async function handler(request) {
             );
         }
 
-        const data = await response.json();
-
         return new Response(
             JSON.stringify(data),
             {
                 status: 200,
                 headers: {
-                    "Content-Type": "application/json",
-                    "Cache-Control": "public, max-age=300"
+                    "Content-Type": "application/json"
                 }
             }
         );
@@ -58,7 +78,8 @@ export default async function handler(request) {
 
         return new Response(
             JSON.stringify({
-                error: "Unable to retrieve news."
+                error: "News function failed",
+                details: error.message
             }),
             {
                 status: 500,
