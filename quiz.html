@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FamousFace - Music Quiz</title>
+    <title>FamousFace - Quiz</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>🌟 FamousFace</h1>
-        <p>🎵 Music Quiz</p>
-    </header>
+<header>
+    <h1>🌟 FamousFace</h1>
+    <p>🎯 Famous People Quiz</p>
+</header>
 
-    <main class="quiz">
+<main class="quiz">
+
+    <!-- Player Registration -->
+    <section id="playerRegistration">
+        <h2>👋 Welcome to FamousFace!</h2>
+
+        <p>Enter your name to start the quiz.</p>
+
+        <input
+            type="text"
+            id="playerName"
+            placeholder="Enter your name"
+            maxlength="30"
+            autocomplete="name"
+        >
+
+        <button id="startButton">
+            🎮 Start Quiz
+        </button>
+
+        <p id="nameError"></p>
+    </section>
+
+    <!-- Quiz Area -->
+    <section id="quizArea" style="display:none;">
+
+        <p id="playerWelcome"></p>
 
         <h2 id="question">Question goes here</h2>
 
@@ -29,14 +54,15 @@
 
         <div id="result"></div>
 
-    </main>
+    </section>
 
-    <footer>
-        <p>© 2026 FamousFace</p>
-    </footer>
+</main>
 
-    <script src="script.js"></script>
+<footer>
+    <p>© 2026 FamousFace</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
