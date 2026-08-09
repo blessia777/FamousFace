@@ -16,7 +16,7 @@ export default async function handler(request) {
                 ? category
                 : "entertainment";
 
-        const apiKey = process.env.GNEWS_API_KEY;
+        const apiKey = Netlify.env.get("GNEWS_API_KEY");
 
         if (!apiKey) {
             return new Response(
