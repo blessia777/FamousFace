@@ -7,10 +7,9 @@ async function loadNews(category = "entertainment") {
     container.innerHTML = "<p>Loading latest news...</p>";
 
     try {
-
-        const response = await fetch(
-            `/.netlify/functions/news?category=${category}`
-        );
+const response = await fetch(
+  `https://famousface-news.famousface-news.workers.dev/?category=${encodeURIComponent(category)}`
+);
 
         if (!response.ok) {
             throw new Error("Could not load news");
