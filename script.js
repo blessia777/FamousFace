@@ -337,6 +337,7 @@ function startQuiz() {
 
     playerWelcome.textContent =
         "Good luck, " + playerName + "! 🌟";
+    questions.sort(() => Math.random() - 0.5);
 
     currentQuestion = 0;
     score = 0;
