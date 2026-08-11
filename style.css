@@ -573,3 +573,83 @@ footer p {
         padding: 25px 18px;
     }
 }
+/* Extra mobile improvements */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    .quiz-section,
+    .leaderboard-section,
+    .news-section {
+        padding: 50px 15px;
+    }
+
+    .quiz-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card {
+        padding: 18px;
+    }
+
+    .news-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .leaderboard-row {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .daily-content {
+        padding: 30px 20px;
+    }
+
+    .daily-content h2 {
+        font-size: 30px;
+    }
+}
