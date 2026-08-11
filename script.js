@@ -536,7 +536,6 @@ function showFinalResult() {
             (score / questions.length) * 100
         );
 
-
     // Save player's latest score locally
     const playerScore = {
         name: playerName,
@@ -550,16 +549,14 @@ function showFinalResult() {
         "famousFaceLatestScore",
         JSON.stringify(playerScore)
     );
-    // Save score to Supabase
-saveScoreToSupabase(playerScore);
 
+    // Save score to Supabase
+    saveScoreToSupabase(playerScore);
 
     questionElement.textContent =
         "🏆 Quiz Complete!";
 
-
     answersElement.innerHTML = "";
-
 
     resultElement.innerHTML = `
 
@@ -575,6 +572,12 @@ saveScoreToSupabase(playerScore);
             ${percentage}%
         </p>
 
+        <button onclick="shareScore()">
+            📤 Share My Score
+        </button>
+
+        <br><br>
+
         <button onclick="restartQuiz()">
             🔄 Play Again
         </button>
@@ -586,8 +589,60 @@ saveScoreToSupabase(playerScore);
         </a>
 
     `;
-
 }
+
+
+// Share score
+async function shareScore() {
+
+    const shareText =
+        `🎉 I scored ${score}/${questions.length} (${Math.round(
+            (score / questions.length) * 100
+        )}%) on the FamousFace ${categoryNames[category]} Quiz! 🌟 Can you beat my score?`;
+
+    const shareUrl =
+        window.location.origin +
+        window.location.pathname +
+        window.location.search;
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share({
+                title: "My FamousFace Score",
+                text: shareText,
+                url: shareUrl
+            });
+
+        } catch (error) {
+
+            console.log("Share cancelled.");
+
+        }
+
+    } else {
+
+        try {
+
+            await navigator.clipboard.writeText(
+                shareText + "\n" + shareUrl
+            );
+
+            alert(
+                "🎉 Your score has been copied! You can now paste it anywhere."
+            );
+
+        } catch (error) {
+
+            alert(
+                "Please copy your score manually and share it with your friends!"
+            );
+
+        }
+    }
+}
+
 
 
 // Restart quiz
