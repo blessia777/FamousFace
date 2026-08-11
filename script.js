@@ -50,109 +50,101 @@ const quizData = {
                 "Coldplay"
             ],
             correct: "The Beatles"
+        },
+        {
+            question: "Which singer is known as the 'Queen of Pop'?",
+            answers: [
+                "Madonna",
+                "Beyoncé",
+                "Adele",
+                "Rihanna"
+            ],
+            correct: "Madonna"
+        },
+        {
+            question: "Which singer released the song 'Shape of You'?",
+            answers: [
+                "Ed Sheeran",
+                "Bruno Mars",
+                "Justin Timberlake",
+                "Shawn Mendes"
+            ],
+            correct: "Ed Sheeran"
+        },
+        {
+            question: "Which band was Freddie Mercury the lead singer of?",
+            answers: [
+                "Queen",
+                "The Beatles",
+                "Coldplay",
+                "ABBA"
+            ],
+            correct: "Queen"
+        },
+        {
+            question: "Which singer is known for the album '21'?",
+            answers: [
+                "Adele",
+                "Taylor Swift",
+                "Lady Gaga",
+                "Katy Perry"
+            ],
+            correct: "Adele"
+        },
+        {
+            question: "Which musical group recorded 'Hey Jude'?",
+            answers: [
+                "The Beatles",
+                "The Rolling Stones",
+                "ABBA",
+                "Queen"
+            ],
+            correct: "The Beatles"
+        },
+        {
+            question: "Which country singer is known for the song 'Jolene'?",
+            answers: [
+                "Dolly Parton",
+                "Shania Twain",
+                "Carrie Underwood",
+                "Faith Hill"
+            ],
+            correct: "Dolly Parton"
+        },
+        {
+            question: "Which singer is famous for the song 'Thriller'?",
+            answers: [
+                "Michael Jackson",
+                "Prince",
+                "Elvis Presley",
+                "Bruno Mars"
+            ],
+            correct: "Michael Jackson"
+        },
+        {
+            question: "Which instrument is commonly associated with classical orchestras and has four strings?",
+            answers: [
+                "Violin",
+                "Saxophone",
+                "Flute",
+                "Piano"
+            ],
+            correct: "Violin"
+        },
+        {
+            question: "Which singer is known for the song 'Umbrella'?",
+            answers: [
+                "Rihanna",
+                "Adele",
+                "Beyoncé",
+                "Ariana Grande"
+            ],
+            correct: "Rihanna"
         }
     ],
-     question: "Which singer is known as the 'Queen of Pop'?",
-    answer: [
-        "Madonna",
-        "Beyoncé",
-        "Adele",
-        "Rihanna"
-    ],
-    correct: "Madonna"
-},
-{
-    question: "Which instrument has black and white keys?",
-    answer: [
-        "Piano",
-        "Violin",
-        "Trumpet",
-        "Drums"
-    ],
-    correct: "Piano"
-},
-{
-    question: "Which singer released the song 'Shape of You'?",
-    answer: [
-        "Ed Sheeran",
-        "Bruno Mars",
-        "Justin Timberlake",
-        "Shawn Mendes"
-    ],
-    correct: "Ed Sheeran"
-},
-{
-    question: "Which band was Freddie Mercury the lead singer of?",
-    answer: [
-        "Queen",
-        "The Beatles",
-        "Coldplay",
-        "ABBA"
-    ],
-    correct: "Queen"
-},
-{
-    question: "Which singer is known for the album '21'?",
-    answer: [
-        "Adele",
-        "Taylor Swift",
-        "Lady Gaga",
-        "Katy Perry"
-    ],
-    correct: "Adele"
-},
-{
-    question: "Which musical group recorded 'Hey Jude'?",
-    answer: [
-        "The Beatles",
-        "The Rolling Stones",
-        "ABBA",
-        "Queen"
-    ],
-    correct: "The Beatles"
-},
-{
-    question: "Which country singer is known for the song 'Jolene'?",
-    answer: [
-        "Dolly Parton",
-        "Shania Twain",
-        "Carrie Underwood",
-        "Faith Hill"
-    ],
-    correct: "Dolly Parton"
-},
-{
-    question: "Which singer is famous for the song 'Thriller'?",
-    answer: [
-        "Michael Jackson",
-        "Prince",
-        "Elvis Presley",
-        "Bruno Mars"
-    ],
-    correct: "Michael Jackson"
-},
-{
-    question: "Which instrument is commonly associated with classical orchestras and has four strings?",
-    answer: [
-        "Violin",
-        "Saxophone",
-        "Flute",
-        "Piano"
-    ],
-    correct: "Violin"
-},
-{
-    
-        Question: "Which singer is known for the song 'Umbrella'?",
-    answer: [
-        "Rihanna",
-        "Adele",
-        "Beyoncé",
-        "Ariana Grande"
-    ],
-    correct: "Rihanna"
-    },
-  movie: [
+
+    movies: [
+        {
             question: "Who played Jack in Titanic?",
             answers: [
                 "Leonardo DiCaprio",
@@ -353,7 +345,6 @@ const quizData = {
         }
     ]
 };
-
 
 // Get selected category
 const urlParams = new URLSearchParams(window.location.search);
