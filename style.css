@@ -37,12 +37,16 @@ body {
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: 800;
-    color: #4f46e5;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
 
+.logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+
+}
 .nav-links {
     display: flex;
     align-items: center;
