@@ -717,11 +717,11 @@ async function saveScoreToSupabase(playerScore) {
                     category: playerScore.category,
                     score: playerScore.score,
                     total_questions: playerScore.total,
-                    percentage: playerScore.percentage
+                    percentage: playerScore.percentage,
+                    daily_challenge: playerScore.dailyChallenge || false
                 })
             }
         );
-
 
         if (!response.ok) {
 
@@ -735,7 +735,6 @@ async function saveScoreToSupabase(playerScore) {
 
             return;
         }
-
 
         console.log(
             "Score successfully saved to Supabase!"
