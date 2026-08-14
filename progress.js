@@ -43,30 +43,19 @@ document.addEventListener("DOMContentLoaded", function () {
         quizHistory = [];
     }
 
-    // No quizzes completed yet
-    if (quizHistory.length === 0) {
-
-        quizzesElement.textContent = "0";
-        bestElement.textContent = "0%";
-        dailyElement.textContent = "0";
-        averageElement.textContent = "0%";
-
-        return;
-    }
-
-    // Total quizzes
+    // Overall statistics
     const totalQuizzes =
         quizHistory.length;
 
-    // Best score
     const bestScore =
-        Math.max(
-            ...quizHistory.map(
-                quiz => Number(quiz.percentage) || 0
-            )
-        );
+        totalQuizzes > 0
+            ? Math.max(
+                ...quizHistory.map(
+                    quiz => Number(quiz.percentage) || 0
+                )
+              )
+            : 0;
 
-    // Average score
     const totalPercentage =
         quizHistory.reduce(
             (total, quiz) =>
@@ -75,17 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     const averageScore =
-        Math.round(
-            totalPercentage / totalQuizzes
-        );
+        totalQuizzes > 0
+            ? Math.round(
+                totalPercentage / totalQuizzes
+              )
+            : 0;
 
-    // Daily Challenges completed
     const dailyChallenges =
         quizHistory.filter(
             quiz => quiz.dailyChallenge === true
         ).length;
 
-    // Display results
+    // Display overall progress
     quizzesElement.textContent =
         totalQuizzes;
 
@@ -97,5 +87,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     averageElement.textContent =
         averageScore + "%";
+
+
+    // Category progress
+    const categories = [
+        "music",
+        "movies",
+        "sports",
+        "art",
+        "history"
+    ];
+
+    categories.forEach(function (category) {
+
+        const categoryScores =
+            quizHistory.filter(
+                quiz => quiz.category === category
+            );
+
+        const plays =
+            categoryScores.length;
+
+        const categoryBest =
+            plays > 0
+                ? Math.max(
+                    ...categoryScores.map(
+                        quiz =>
+                            Number(quiz.percentage) || 0
+                    )
+                  )
+                : 0;
+
+        const element =
+            document.getElementById(
+                category + "-progress"
+            );
+
+        if (!element) return;
+
+        element.textContent =
+            `${plays} ${plays === 1 ? "play" : "plays"} • Best: ${categoryBest}%`;
+
+    });
 
 });
