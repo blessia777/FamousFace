@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dailyDescription.textContent =
         challenge.description;
 
-    dailyButton.href =
-        "quiz.html?category=" + challenge.category;
+ dailyButton.href =
+    "quiz.html?category=" + challenge.category + "&daily=1"; 
 
 });
