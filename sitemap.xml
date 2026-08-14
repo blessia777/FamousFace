@@ -9,21 +9,39 @@
     </url>
 
     <url>
-        <loc>https://blessia777.github.io/FamousFace/quiz.html</loc>
+        <loc>https://blessia777.github.io/FamousFace/music-quiz.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://blessia777.github.io/FamousFace/about.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://blessia777.github.io/FamousFace/movies-quiz.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://blessia777.github.io/FamousFace/contact.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://blessia777.github.io/FamousFace/sports-quiz.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://blessia777.github.io/FamousFace/art-quiz.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://blessia777.github.io/FamousFace/history-quiz.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://blessia777.github.io/FamousFace/quiz.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
