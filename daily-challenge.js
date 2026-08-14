@@ -2,9 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const dailyTitle = document.getElementById("daily-title");
-    const dailyDescription = document.getElementById("daily-description");
-    const dailyButton = document.getElementById("daily-button");
+    const dailyTitle =
+        document.getElementById("daily-title");
+
+    const dailyDescription =
+        document.getElementById("daily-description");
+
+    const dailyButton =
+        document.getElementById("daily-button");
 
     if (!dailyTitle || !dailyDescription || !dailyButton) {
         return;
@@ -14,33 +19,39 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             category: "music",
             name: "Music Challenge",
-            description: "Test your knowledge of famous singers, musicians and bands."
+            description:
+                "Test your knowledge of famous singers, musicians and bands."
         },
         {
             category: "movies",
             name: "Movies Challenge",
-            description: "Challenge yourself with famous movies, actors and film trivia."
+            description:
+                "Challenge yourself with famous movies, actors and film trivia."
         },
         {
             category: "sports",
             name: "Sports Challenge",
-            description: "Test your knowledge of famous athletes and sporting events."
+            description:
+                "Test your knowledge of famous athletes and sporting events."
         },
         {
             category: "art",
             name: "Art Challenge",
-            description: "Explore famous artists, paintings and masterpieces."
+            description:
+                "Explore famous artists, paintings and masterpieces."
         },
         {
             category: "history",
             name: "History Challenge",
-            description: "Test your knowledge of famous historical people and events."
+            description:
+                "Test your knowledge of famous historical people and events."
         }
     ];
 
-    // Use the current date to select the daily challenge.
+    // Get today's date
     const today = new Date();
 
+    // Create a consistent number for the current day
     const dayNumber =
         Math.floor(
             Date.UTC(
@@ -50,16 +61,33 @@ document.addEventListener("DOMContentLoaded", function () {
             ) / 86400000
         );
 
+    // Select today's challenge
     const challenge =
         challenges[dayNumber % challenges.length];
 
+    // Format today's date
+    const formattedDate =
+        today.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+
+    // Update the Daily Challenge title
     dailyTitle.textContent =
         "🔥 Today's " + challenge.name;
 
-    dailyDescription.textContent =
-        challenge.description;
+    // Update description
+    dailyDescription.innerHTML =
+        `${challenge.description}<br><br>
+        📅 <strong>${formattedDate}</strong><br>
+        🔄 A new challenge arrives tomorrow!`;
 
- dailyButton.href =
-    "quiz.html?category=" + challenge.category + "&daily=1"; 
+    // Update quiz button
+    dailyButton.href =
+        "quiz.html?category=" +
+        challenge.category +
+        "&daily=1";
 
 });
