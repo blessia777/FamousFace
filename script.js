@@ -350,6 +350,8 @@ const quizData = {
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category") || "music";
 
+const isDailyChallenge =
+    urlParams.get("daily") === "1";
 
 // Get questions
 const questions = quizData[category] || quizData.music;
@@ -526,8 +528,6 @@ function checkAnswer(answer, clickedButton) {
     }, 1200);
 
 }
-
-
 // Final result
 function showFinalResult() {
 
@@ -542,7 +542,9 @@ function showFinalResult() {
         category: category,
         score: score,
         total: questions.length,
-        percentage: percentage
+        percentage: percentage,
+        dailyChallenge: isDailyChallenge,
+        date: new Date().toISOString().split("T")[0]
     };
 
     localStorage.setItem(
@@ -553,16 +555,47 @@ function showFinalResult() {
     // Save score to Supabase
     saveScoreToSupabase(playerScore);
 
+    // Save Daily Challenge result locally
+    if (isDailyChallenge) {
+
+        const today =
+            new Date().toISOString().split("T")[0];
+
+        const dailyResult = {
+            name: playerName,
+            category: category,
+            score: score,
+            total: questions.length,
+            percentage: percentage,
+            date: today
+        };
+
+        localStorage.setItem(
+            "famousFaceDailyScore",
+            JSON.stringify(dailyResult)
+        );
+    }
+
     questionElement.textContent =
-        "🏆 Quiz Complete!";
+        isDailyChallenge
+            ? "🔥 Daily Challenge Complete!"
+            : "🏆 Quiz Complete!";
 
     answersElement.innerHTML = "";
 
     resultElement.innerHTML = `
 
-        <h2>Well done, ${playerName}! 🎉</h2>
+        <h2>
+            ${isDailyChallenge
+                ? "🔥 Daily Challenge Complete!"
+                : "Well done, " + playerName + "! 🎉"}
+        </h2>
 
-        <h3>Your Score</h3>
+        <h3>
+            ${isDailyChallenge
+                ? "Today's Score"
+                : "Your Score"}
+        </h3>
 
         <p>
             ${score} out of ${questions.length}
@@ -571,6 +604,12 @@ function showFinalResult() {
         <p>
             ${percentage}%
         </p>
+
+        ${
+            isDailyChallenge
+                ? "<p>🏆 Your Daily Challenge result has been saved!</p>"
+                : ""
+        }
 
         <button onclick="shareScore()">
             📤 Share My Score
@@ -590,6 +629,7 @@ function showFinalResult() {
 
     `;
 }
+
 
 
 // Share score
