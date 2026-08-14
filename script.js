@@ -551,6 +551,24 @@ function showFinalResult() {
         "famousFaceLatestScore",
         JSON.stringify(playerScore)
     );
+    // Save quiz to permanent local history
+let quizHistory = [];
+
+try {
+    quizHistory =
+        JSON.parse(
+            localStorage.getItem("famousFaceQuizHistory")
+        ) || [];
+} catch (error) {
+    quizHistory = [];
+}
+
+quizHistory.push(playerScore);
+
+localStorage.setItem(
+    "famousFaceQuizHistory",
+    JSON.stringify(quizHistory)
+);
 
     // Save score to Supabase
     saveScoreToSupabase(playerScore);
