@@ -23,100 +23,69 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Get the latest saved score
-    const latestScore =
-        localStorage.getItem("famousFaceLatestScore");
+    // Get complete quiz history
+    let quizHistory = [];
 
-    // Get the latest Daily Challenge score
-    const dailyScore =
-        localStorage.getItem("famousFaceDailyScore");
+    try {
 
-    let totalQuizzes = 0;
-    let bestScore = 0;
-    let totalPercentage = 0;
-    let scoreCount = 0;
-    let dailyChallenges = 0;
+        quizHistory =
+            JSON.parse(
+                localStorage.getItem("famousFaceQuizHistory")
+            ) || [];
 
-    // Read latest score
-    if (latestScore) {
+    } catch (error) {
 
-        try {
+        console.error(
+            "Could not read quiz history:",
+            error
+        );
 
-            const score =
-                JSON.parse(latestScore);
-
-            totalQuizzes = 1;
-
-            bestScore =
-                Number(score.percentage) || 0;
-
-            totalPercentage =
-                Number(score.percentage) || 0;
-
-            scoreCount = 1;
-
-        } catch (error) {
-
-            console.error(
-                "Progress error:",
-                error
-            );
-
-        }
+        quizHistory = [];
     }
 
-    // Read Daily Challenge score
-    if (dailyScore) {
+    // No quizzes completed yet
+    if (quizHistory.length === 0) {
 
-        try {
+        quizzesElement.textContent = "0";
+        bestElement.textContent = "0%";
+        dailyElement.textContent = "0";
+        averageElement.textContent = "0%";
 
-            const daily =
-                JSON.parse(dailyScore);
-
-            dailyChallenges = 1;
-
-            const dailyPercentage =
-                Number(daily.percentage) || 0;
-
-            if (dailyPercentage > bestScore) {
-                bestScore = dailyPercentage;
-            }
-
-            if (scoreCount > 0) {
-
-                totalPercentage +=
-                    dailyPercentage;
-
-                scoreCount++;
-
-            } else {
-
-                totalPercentage =
-                    dailyPercentage;
-
-                scoreCount = 1;
-
-            }
-
-        } catch (error) {
-
-            console.error(
-                "Daily progress error:",
-                error
-            );
-
-        }
+        return;
     }
 
-    // Calculate average
+    // Total quizzes
+    const totalQuizzes =
+        quizHistory.length;
+
+    // Best score
+    const bestScore =
+        Math.max(
+            ...quizHistory.map(
+                quiz => Number(quiz.percentage) || 0
+            )
+        );
+
+    // Average score
+    const totalPercentage =
+        quizHistory.reduce(
+            (total, quiz) =>
+                total + (Number(quiz.percentage) || 0),
+            0
+        );
+
     const averageScore =
-        scoreCount > 0
-            ? Math.round(
-                totalPercentage / scoreCount
-              )
-            : 0;
+        Math.round(
+            totalPercentage / totalQuizzes
+        );
 
-    // Display progress
+    // Daily Challenges completed
+    const dailyChallenges =
+        quizHistory.filter(
+            quiz => quiz.dailyChallenge === true
+        ).length;
+
+    // Display results
     quizzesElement.textContent =
         totalQuizzes;
 
