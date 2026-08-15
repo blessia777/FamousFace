@@ -420,6 +420,11 @@ function startQuiz() {
     }
 
     playerName = enteredName;
+    if (typeof gtag === "function") {
+    gtag("event", "quiz_started", {
+        category: category
+    });
+}
 
     nameError.textContent = "";
 
