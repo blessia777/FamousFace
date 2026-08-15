@@ -547,6 +547,16 @@ function showFinalResult() {
         percentage: percentage
     });
 }
+    const isDailyChallenge =
+    urlParams.get("daily") === "1";
+
+if (isDailyChallenge && typeof gtag === "function") {
+    gtag("event", "daily_challenge_completed", {
+        category: category,
+        score: score,
+        percentage: percentage
+    });
+}
 
     // Save player's latest score locally
     const playerScore = {
