@@ -674,6 +674,16 @@ localStorage.setItem(
 
 // Share score
 async function shareScore() {
+    if (typeof gtag === "function") {
+    gtag("event", "score_shared", {
+        category: category,
+        score: score,
+        total_questions: questions.length,
+        percentage: Math.round(
+            (score / questions.length) * 100
+        )
+    });
+}
 
     const shareText =
         `🎉 I scored ${score}/${questions.length} (${Math.round(
