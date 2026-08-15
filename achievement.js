@@ -269,6 +269,17 @@ const dailyStreak =
 
         });
 
+newlyUnlocked.forEach(function (achievement) {
+
+    if (typeof gtag === "function") {
+
+        gtag("event", "achievement_unlocked", {
+            achievement_name: achievement.name
+        });
+
+    }
+
+});
 
     // Save all currently unlocked achievements
     const allUnlocked =
