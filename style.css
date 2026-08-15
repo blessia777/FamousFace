@@ -858,3 +858,41 @@ footer p {
     }
 
 }
+/* Homepage Advertisement */
+
+.ad-container {
+    width: min(100%, 728px);
+    margin: 35px auto;
+    text-align: center;
+}
+
+.ad-label {
+    margin: 0 0 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.ad-placeholder {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #ccc;
+    border-radius: 12px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+
+    .ad-container {
+        margin: 25px auto;
+    }
+
+    .ad-placeholder {
+        min-height: 70px;
+    }
+
+}
