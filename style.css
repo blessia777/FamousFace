@@ -783,3 +783,78 @@ footer p {
     }
 
 }
+/* Achievement Notification */
+
+.achievement-notification {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: min(380px, calc(100% - 40px));
+
+    padding: 18px 20px;
+
+    background: #ffffff;
+    color: #222;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+
+    z-index: 9999;
+
+    transform: translateX(120%);
+    opacity: 0;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.achievement-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.achievement-notification-icon {
+    font-size: 38px;
+}
+
+.achievement-notification strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.achievement-notification p {
+    margin: 0;
+    font-weight: 600;
+}
+
+#achievement-notification-close {
+    margin-left: auto;
+
+    border: none;
+    background: transparent;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    padding: 4px 8px;
+}
+
+@media (max-width: 600px) {
+
+    .achievement-notification {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+    }
+
+}
