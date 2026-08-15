@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const averageElement =
         document.getElementById("progress-average");
+    const streakElement =
+    document.getElementById("progress-streak");
 
     if (
         !quizzesElement ||
@@ -70,10 +72,70 @@ document.addEventListener("DOMContentLoaded", function () {
               )
             : 0;
 
-    const dailyChallenges =
-        quizHistory.filter(
-            quiz => quiz.dailyChallenge === true
-        ).length;
+  const dailyHistory =
+    quizHistory.filter(
+        quiz => quiz.dailyChallenge === true
+    );
+
+const dailyChallenges =
+    dailyHistory.length;
+
+
+// Calculate Daily Challenge streak
+function calculateStreak(history) {
+
+    if (history.length === 0) {
+        return 0;
+    }
+
+    const uniqueDates = [
+        ...new Set(
+            history
+                .map(quiz => quiz.date)
+                .filter(Boolean)
+        )
+    ].sort().reverse();
+
+    if (uniqueDates.length === 0) {
+        return 0;
+    }
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    // Streak only counts if the player completed
+    // a Daily Challenge today.
+    if (uniqueDates[0] !== today) {
+        return 0;
+    }
+
+    let streak = 0;
+
+    for (let i = 0; i < uniqueDates.length; i++) {
+
+        const expectedDate = new Date();
+
+        expectedDate.setDate(
+            expectedDate.getDate() - i
+        );
+
+        const expected =
+            expectedDate
+                .toISOString()
+                .split("T")[0];
+
+        if (uniqueDates[i] === expected) {
+            streak++;
+        } else {
+            break;
+        }
+    }
+
+    return streak;
+}
+
+const dailyStreak =
+    calculateStreak(dailyHistory); 
 
     // Display overall progress
     quizzesElement.textContent =
@@ -87,6 +149,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     averageElement.textContent =
         averageScore + "%";
+    if (streakElement) {
+
+    streakElement.textContent =
+        `${dailyStreak} ${
+            dailyStreak === 1
+                ? "day"
+                : "days"
+        }`;
+
+}
 
 
     // Category progress
