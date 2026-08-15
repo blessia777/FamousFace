@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    // Basic statistics
     const totalQuizzes =
         quizHistory.length;
 
@@ -36,15 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
             quiz => quiz.dailyChallenge === true
         ).length;
 
-    const categories = [
-        "music",
-        "movies",
-        "sports",
-        "art",
-        "history"
-    ];
+    // Category counts
+    const categoryCount = function (category) {
 
+        return quizHistory.filter(
+            quiz => quiz.category === category
+        ).length;
+
+    };
+
+    // Achievement definitions
     const achievements = [
+
         {
             icon: "🌟",
             name: "First Quiz",
@@ -70,50 +72,35 @@ document.addEventListener("DOMContentLoaded", function () {
             icon: "🎵",
             name: "Music Fan",
             description: "Complete 3 Music quizzes.",
-            unlocked:
-                quizHistory.filter(
-                    quiz => quiz.category === "music"
-                ).length >= 3
+            unlocked: categoryCount("music") >= 3
         },
 
         {
             icon: "🎬",
             name: "Movie Buff",
             description: "Complete 3 Movies quizzes.",
-            unlocked:
-                quizHistory.filter(
-                    quiz => quiz.category === "movies"
-                ).length >= 3
+            unlocked: categoryCount("movies") >= 3
         },
 
         {
             icon: "⚽",
             name: "Sports Expert",
             description: "Complete 3 Sports quizzes.",
-            unlocked:
-                quizHistory.filter(
-                    quiz => quiz.category === "sports"
-                ).length >= 3
+            unlocked: categoryCount("sports") >= 3
         },
 
         {
             icon: "🎨",
             name: "Art Lover",
             description: "Complete 3 Art quizzes.",
-            unlocked:
-                quizHistory.filter(
-                    quiz => quiz.category === "art"
-                ).length >= 3
+            unlocked: categoryCount("art") >= 3
         },
 
         {
             icon: "🌍",
             name: "History Buff",
             description: "Complete 3 History quizzes.",
-            unlocked:
-                quizHistory.filter(
-                    quiz => quiz.category === "history"
-                ).length >= 3
+            unlocked: categoryCount("history") >= 3
         },
 
         {
@@ -122,8 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "Complete 7 Daily Challenges.",
             unlocked: dailyChallenges >= 7
         }
+
     ];
 
+    // Display achievement cards
     achievementsList.innerHTML = "";
 
     achievements.forEach(function (achievement) {
@@ -161,5 +150,116 @@ document.addEventListener("DOMContentLoaded", function () {
         achievementsList.appendChild(card);
 
     });
+
+
+    // --------------------------------
+    // Achievement Notification
+    // --------------------------------
+
+    const notification =
+        document.getElementById(
+            "achievement-notification"
+        );
+
+    const notificationName =
+        document.getElementById(
+            "achievement-notification-name"
+        );
+
+    const closeButton =
+        document.getElementById(
+            "achievement-notification-close"
+        );
+
+    if (!notification || !notificationName) {
+        return;
+    }
+
+
+    // Get previously unlocked achievements
+    let unlockedAchievements = [];
+
+    try {
+
+        unlockedAchievements =
+            JSON.parse(
+                localStorage.getItem(
+                    "famousFaceUnlockedAchievements"
+                )
+            ) || [];
+
+    } catch (error) {
+
+        unlockedAchievements = [];
+
+    }
+
+
+    // Find newly unlocked achievements
+    const newlyUnlocked =
+        achievements.filter(function (achievement) {
+
+            return (
+                achievement.unlocked &&
+                !unlockedAchievements.includes(
+                    achievement.name
+                )
+            );
+
+        });
+
+
+    // Save all currently unlocked achievements
+    const allUnlocked =
+        achievements
+            .filter(
+                achievement => achievement.unlocked
+            )
+            .map(
+                achievement => achievement.name
+            );
+
+    localStorage.setItem(
+        "famousFaceUnlockedAchievements",
+        JSON.stringify(allUnlocked)
+    );
+
+
+    // Show newest achievement
+    if (newlyUnlocked.length > 0) {
+
+        const achievement =
+            newlyUnlocked[0];
+
+        notificationName.textContent =
+            `${achievement.icon} ${achievement.name}`;
+
+        notification.classList.add("show");
+
+        // Automatically hide after 5 seconds
+        setTimeout(function () {
+
+            notification.classList.remove("show");
+
+        }, 5000);
+
+    }
+
+
+    // Close button
+    if (closeButton) {
+
+        closeButton.addEventListener(
+            "click",
+            function () {
+
+                notification.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+    }
 
 });
