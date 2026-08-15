@@ -123,11 +123,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 category + "-progress"
             );
 
-        if (!element) return;
+      if (!element) return;
 
-        element.textContent =
-            `${plays} ${plays === 1 ? "play" : "plays"} • Best: ${categoryBest}%`;
+element.textContent =
+    `${plays} ${plays === 1 ? "play" : "plays"} • Best: ${categoryBest}%`;
 
+const progressBar =
+    document.getElementById(
+        category + "-progress-bar"
+    );
+
+if (progressBar) {
+    progressBar.style.width =
+        categoryBest + "%";
+}
     });
 
 });
