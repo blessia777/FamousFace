@@ -34,7 +34,55 @@ document.addEventListener("DOMContentLoaded", function () {
         quizHistory.filter(
             quiz => quiz.dailyChallenge === true
         ).length;
+const dailyHistory =
+    quizHistory.filter(
+        quiz => quiz.dailyChallenge === true
+    );
 
+function calculateDailyStreak(history) {
+
+    if (history.length === 0) return 0;
+
+    const dates = [
+        ...new Set(
+            history
+                .map(quiz => quiz.date)
+                .filter(Boolean)
+        )
+    ].sort().reverse();
+
+    if (dates.length === 0) return 0;
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    if (dates[0] !== today) return 0;
+
+    let streak = 0;
+
+    for (let i = 0; i < dates.length; i++) {
+
+        const expectedDate = new Date();
+
+        expectedDate.setDate(
+            expectedDate.getDate() - i
+        );
+
+        const expected =
+            expectedDate.toISOString().split("T")[0];
+
+        if (dates[i] === expected) {
+            streak++;
+        } else {
+            break;
+        }
+    }
+
+    return streak;
+}
+
+const dailyStreak =
+    calculateDailyStreak(dailyHistory);
     // Category counts
     const categoryCount = function (category) {
 
@@ -109,6 +157,19 @@ document.addEventListener("DOMContentLoaded", function () {
             description: "Complete 7 Daily Challenges.",
             unlocked: dailyChallenges >= 7
         }
+        {
+    icon: "🔥",
+    name: "3-Day Streak",
+    description: "Complete Daily Challenges for 3 consecutive days.",
+    unlocked: dailyStreak >= 3
+},
+
+{
+    icon: "🔥",
+    name: "7-Day Streak",
+    description: "Complete Daily Challenges for 7 consecutive days.",
+    unlocked: dailyStreak >= 7
+}
 
     ];
 
