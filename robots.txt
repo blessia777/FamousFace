@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blessia777.github.io/FamousFace/sitemap.xml
