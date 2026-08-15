@@ -540,6 +540,13 @@ function showFinalResult() {
         Math.round(
             (score / questions.length) * 100
         );
+    if (typeof gtag === "function") {
+    gtag("event", "quiz_completed", {
+        category: category,
+        score: score,
+        percentage: percentage
+    });
+}
 
     // Save player's latest score locally
     const playerScore = {
