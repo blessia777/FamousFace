@@ -411,16 +411,39 @@
         <a href="contact.html">Contact</a> |
         <a href="privacy.html">Privacy Policy</a>
     </p>
-
 </footer>
-    <script src="supabase-config.js"></script>
-<script src="leaderboard.js"></script>
-    <script src="news.js"></script>
-    <script src="daily-challenge.js"></script>
-    <script src="daily-leaderboard.js"></script>
-    
-<script src="progress.js"></script>
-    <script src="achievements.js"></script>
-</body>
 
+<!-- Achievement Notification -->
+<div id="achievement-notification" class="achievement-notification">
+
+    <div class="achievement-notification-icon">
+        🏅
+    </div>
+
+    <div>
+        <strong id="achievement-notification-title">
+            Achievement Unlocked!
+        </strong>
+
+        <p id="achievement-notification-name"></p>
+    </div>
+
+    <button
+        id="achievement-notification-close"
+        type="button">
+        ×
+    </button>
+
+</div>
+
+<script src="supabase-config.js"></script>
+<script src="leaderboard.js"></script>
+<script src="news.js"></script>
+<script src="daily-challenge.js"></script>
+<script src="daily-leaderboard.js"></script>
+<script src="progress.js"></script>
+<script src="achievements.js"></script>
+
+</body>
 </html>
+    
