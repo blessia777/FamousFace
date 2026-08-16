@@ -388,6 +388,8 @@ const playerWelcome =
 const questionProgress =
     document.getElementById("questionProgress");
 
+const quizProgressFill =
+    document.getElementById("quiz-progress-fill");
 
 
 // Category names
@@ -458,6 +460,14 @@ function showQuestion() {
         questionProgress.textContent =
             `Question ${currentQuestion + 1} of ${questions.length}`;
     }
+    if (quizProgressFill) {
+
+    const progress =
+        ((currentQuestion + 1) / questions.length) * 100;
+
+    quizProgressFill.style.width =
+        progress + "%";
+}
     answersElement.innerHTML = "";
 
     resultElement.innerHTML = "";
