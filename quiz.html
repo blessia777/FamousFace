@@ -54,7 +54,19 @@
     <section id="playerRegistration">
         <h2>👋 Welcome to FamousFace!</h2>
 
-        <p>Enter your name to start the quiz.</p>
+        <p>
+    Enter your name, choose a challenge and test your knowledge
+    of famous people from around the world.
+</p>
+       <div class="quiz-introduction">
+
+    <p>🎵 Music</p>
+    <p>🎬 Movies</p>
+    <p>⚽ Sports</p>
+    <p>🎨 Art</p>
+    <p>🌍 History</p>
+
+</div>
 
         <input
             type="text"
@@ -74,20 +86,35 @@
     <!-- Quiz Area -->
     <section id="quizArea" style="display:none;">
 
+    <div class="quiz-header">
+
         <p id="playerWelcome"></p>
 
-        <h2 id="question">Question goes here</h2>
+        <div class="quiz-progress">
+            <span id="questionProgress">
+                Question 1
+            </span>
+        </div>
+
+    </div>
+
+    <div class="quiz-question-card">
+
+        <h2 id="question">
+            Question goes here
+        </h2>
 
         <div id="answers"></div>
 
-        <button id="nextButton">
-            Next Question
-        </button>
+    </div>
 
-        <div id="result"></div>
+    <button id="nextButton" class="primary-button">
+        Next Question →
+    </button>
 
-    </section>
+    <div id="result"></div>
 
+</section>
 </main>
 
 <footer>
