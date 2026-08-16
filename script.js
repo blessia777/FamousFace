@@ -744,16 +744,16 @@ async function shareScore() {
         )
     });
 }
+const shareText =
+    `🌟 I scored ${score}/${questions.length} (${Math.round(
+        (score / questions.length) * 100
+    )}%) on the FamousFace ${categoryNames[category]} Quiz! 🎯
 
-    const shareText =
-        `🎉 I scored ${score}/${questions.length} (${Math.round(
-            (score / questions.length) * 100
-        )}%) on the FamousFace ${categoryNames[category]} Quiz! 🌟 Can you beat my score?`;
-
-    const shareUrl =
-        window.location.origin +
-        window.location.pathname +
-        window.location.search;
+Can you beat my score? Challenge yourself on FamousFace! 🔥`;
+    
+const shareUrl =
+    "https://blessia777.github.io/FamousFace/";
+    
 
     if (navigator.share) {
 
