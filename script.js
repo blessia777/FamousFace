@@ -608,6 +608,7 @@ localStorage.setItem(
     "famousFaceQuizHistory",
     JSON.stringify(quizHistory)
 );
+    displayDailyStreak();
 
     // Save score to Supabase
     saveScoreToSupabase(playerScore);
