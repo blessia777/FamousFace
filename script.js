@@ -689,10 +689,43 @@ localStorage.setItem(
         </button>
 
         <br><br>
+<div class="next-quiz-section">
 
-        <a href="index.html">
-            🏠 Back to Home
+    <h3>🎯 Try Another Quiz</h3>
+
+    <p>Keep playing and test your knowledge in another category!</p>
+
+    <div class="next-quiz-buttons">
+
+        <a href="quiz.html?category=music">
+            🎵 Music
         </a>
+
+        <a href="quiz.html?category=movies">
+            🎬 Movies
+        </a>
+
+        <a href="quiz.html?category=sports">
+            ⚽ Sports
+        </a>
+
+        <a href="quiz.html?category=art">
+            🎨 Art
+        </a>
+
+        <a href="quiz.html?category=history">
+            🌍 History
+        </a>
+
+    </div>
+
+</div>
+
+<br>
+
+<a href="index.html">
+    🏠 Back to Home
+</a>
 
     `;
 }
