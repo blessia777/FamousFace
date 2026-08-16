@@ -632,7 +632,7 @@ localStorage.setItem(
             JSON.stringify(dailyResult)
         );
     }
-
+  
     questionElement.textContent =
         isDailyChallenge
             ? "🔥 Daily Challenge Complete!"
@@ -657,11 +657,21 @@ localStorage.setItem(
         <p>
             ${score} out of ${questions.length}
         </p>
+<p>
+    ${percentage}%
+</p>
 
-        <p>
-            ${percentage}%
-        </p>
-
+<p>
+    ${
+        percentage >= 90
+            ? "🏆 Outstanding! You're a FamousFace expert!"
+            : percentage >= 70
+            ? "🌟 Great job! You really know your stuff!"
+            : percentage >= 50
+            ? "👍 Good effort! Try again and beat your score!"
+            : "💪 Keep playing! Your next score can be even better!"
+    }
+</p>
         ${
             isDailyChallenge
                 ? "<p>🏆 Your Daily Challenge result has been saved!</p>"
