@@ -859,3 +859,95 @@ async function saveScoreToSupabase(playerScore) {
 
     }
 }
+// Calculate Daily Streak
+function updateDailyStreak() {
+
+    let quizHistory = [];
+
+    try {
+        quizHistory =
+            JSON.parse(
+                localStorage.getItem("famousFaceQuizHistory")
+            ) || [];
+    } catch (error) {
+        quizHistory = [];
+    }
+
+    if (quizHistory.length === 0) {
+        return 0;
+    }
+
+    // Get unique quiz dates
+    const dates = [
+        ...new Set(
+            quizHistory
+                .map(item => item.date)
+                .filter(Boolean)
+        )
+    ].sort().reverse();
+
+    if (dates.length === 0) {
+        return 0;
+    }
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const latestDate = new Date(dates[0]);
+    latestDate.setHours(0, 0, 0, 0);
+
+    // If the latest quiz wasn't today or yesterday,
+    // the streak is broken.
+    const difference =
+        Math.floor(
+            (today - latestDate) / 86400000
+        );
+
+    if (difference > 1) {
+        return 0;
+    }
+
+    let streak = 1;
+
+    for (let i = 1; i < dates.length; i++) {
+
+        const currentDate =
+            new Date(dates[i - 1]);
+
+        const previousDate =
+            new Date(dates[i]);
+
+        currentDate.setHours(0, 0, 0, 0);
+        previousDate.setHours(0, 0, 0, 0);
+
+        const daysBetween =
+            Math.round(
+                (currentDate - previousDate) /
+                86400000
+            );
+
+        if (daysBetween === 1) {
+            streak++;
+        } else {
+            break;
+        }
+    }
+
+    return streak;
+}
+function displayDailyStreak() {
+
+    const streakElement =
+        document.getElementById("progress-streak");
+
+    if (!streakElement) {
+        return;
+    }
+
+    const streak =
+        updateDailyStreak();
+
+    streakElement.textContent =
+        streak + (streak === 1 ? " day" : " days");
+}
+
