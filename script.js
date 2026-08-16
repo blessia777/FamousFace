@@ -385,6 +385,9 @@ const nameError =
 
 const playerWelcome =
     document.getElementById("playerWelcome");
+const questionProgress =
+    document.getElementById("questionProgress");
+
 
 
 // Category names
@@ -451,6 +454,10 @@ function showQuestion() {
     questionElement.textContent =
         current.question;
 
+    if (questionProgress) {
+        questionProgress.textContent =
+            `Question ${currentQuestion + 1} of ${questions.length}`;
+    }
     answersElement.innerHTML = "";
 
     resultElement.innerHTML = "";
