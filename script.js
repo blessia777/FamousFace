@@ -558,21 +558,23 @@ function showFinalResult() {
             (score / questions.length) * 100
         );
     if (typeof gtag === "function") {
-    gtag("event", "quiz_completed", {
-        category: category,
-        score: score,
-        percentage: percentage
-    });
+   gtag("event", "quiz_completed", {
+    category: category,
+    score: score,
+    percentage: percentage,
+    debug_mode: true
+});
 }
     const isDailyChallenge =
     urlParams.get("daily") === "1";
 
 if (isDailyChallenge && typeof gtag === "function") {
-    gtag("event", "daily_challenge_completed", {
-        category: category,
-        score: score,
-        percentage: percentage
-    });
+   gtag("event", "daily_challenge_completed", {
+    category: category,
+    score: score,
+    percentage: percentage,
+    debug_mode: true
+});
 }
 
     // Save player's latest score locally
