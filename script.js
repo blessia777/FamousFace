@@ -352,10 +352,104 @@ const category = urlParams.get("category") || "music";
 
 const isDailyChallenge =
     urlParams.get("daily") === "1";
+// Check whether this is the Daily Challenge
+const isDailyChallenge = urlParams.get("daily") === "1";
+
+
+// Create a repeatable number from today's date
+function getDailySeed() {
+    const today = new Date();
+
+    const dateString =
+        today.getFullYear() +
+        "-" +
+        String(today.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(today.getDate()).padStart(2, "0");
+
+    let seed = 0;
+
+    for (let i = 0; i < dateString.length; i++) {
+        seed =
+            ((seed << 5) - seed) +
+            dateString.charCodeAt(i);
+
+        seed |= 0;
+    }
+
+    return Math.abs(seed);
+}
+
+
+// Repeatable shuffle
+function seededShuffle(array, seed) {
+
+    const result = [...array];
+
+    for (let i = result.length - 1; i > 0; i--) {
+
+        seed =
+            (seed * 9301 + 49297) %
+            233280;
+
+        const j =
+            Math.floor(
+                (seed / 233280) *
+                (i + 1)
+            );
+
+        [result[i], result[j]] =
+            [result[j], result[i]];
+    }
+
+    return result;
+}
+
+
+// Get Daily Challenge questions
+function getDailyChallengeQuestions() {
+
+    const categories = [
+        "music",
+        "movies",
+        "sports",
+        "art",
+        "history"
+    ];
+
+    const seed = getDailySeed();
+
+    let dailyQuestions = [];
+
+    categories.forEach((categoryName, index) => {
+
+        const categoryQuestions =
+            quizData[categoryName] || [];
+
+        const shuffled =
+            seededShuffle(
+                categoryQuestions,
+                seed + index
+            );
+
+        // Take 2 questions from each category
+        dailyQuestions.push(
+            ...shuffled.slice(0, 2)
+        );
+    });
+
+    // Shuffle the final 10 questions
+    return seededShuffle(
+        dailyQuestions,
+        seed + 100
+    );
+}
+
 
 // Get questions
-const questions = quizData[category] || quizData.music;
-
+const questions = isDailyChallenge
+    ? getDailyChallengeQuestions()
+    : (quizData[category] || quizData.music);
 
 // Quiz variables
 let currentQuestion = 0;
