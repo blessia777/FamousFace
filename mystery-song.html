@@ -1,0 +1,313 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FamousFace - Mystery Song</title>
+
+    <meta name="description"
+          content="Play FamousFace Mystery Song and identify famous songs from clues.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="famousface-logo.png" alt="FamousFace Quiz">
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="music-quiz.html">Music Quiz</a>
+        <a href="index.html#categories">Quizzes</a>
+    </nav>
+
+    <main class="mystery-song-page">
+
+        <section class="mystery-song-header">
+
+            <p class="section-label">🎵 FAMOUSFACE MUSIC CHALLENGE</p>
+
+            <h1>🎧 Mystery Song</h1>
+
+            <p>
+                Can you identify the famous song from the clues?
+            </p>
+
+        </section>
+
+        <section class="mystery-song-card">
+
+            <div id="round-label">
+                Round 1
+            </div>
+
+            <div class="mystery-icon">
+                🎵
+            </div>
+
+            <h2 id="question">
+                Loading mystery song...
+            </h2>
+
+            <div id="clues"></div>
+
+            <div id="answers"></div>
+
+            <p id="feedback"></p>
+
+            <button id="next-button"
+                    class="primary-button"
+                    style="display:none;">
+                Next Song →
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FamousFace. All rights reserved.</p>
+
+        <p>
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="privacy.html">Privacy Policy</a>
+        </p>
+    </footer>
+
+<script>
+
+const mysterySongs = [
+
+    {
+        question: "Which song is known for the famous line about dancing in the dark?",
+
+        clues: [
+            "🎤 The artist is a globally famous singer.",
+            "💿 The song became a major international hit.",
+            "🌙 The title is connected with nighttime."
+        ],
+
+        answers: [
+            "Dancing in the Dark",
+            "Hello",
+            "Thriller",
+            "Shape of You"
+        ],
+
+        correct: "Dancing in the Dark"
+    },
+
+    {
+        question: "Which song is associated with a famous British singer and became a worldwide hit?",
+
+        clues: [
+            "🇬🇧 The artist is British.",
+            "🎤 The singer is known for powerful vocals.",
+            "❤️ The song became popular around the world."
+        ],
+
+        answers: [
+            "Hello",
+            "Billie Jean",
+            "Uptown Funk",
+            "Havana"
+        ],
+
+        correct: "Hello"
+    },
+
+    {
+        question: "Which famous song is strongly associated with Michael Jackson?",
+
+        clues: [
+            "👑 The artist was known as the King of Pop.",
+            "🎤 The artist became one of the world's most famous entertainers.",
+            "🕺 The song is one of his best-known hits."
+        ],
+
+        answers: [
+            "Thriller",
+            "Hello",
+            "Shape of You",
+            "Havana"
+        ],
+
+        correct: "Thriller"
+    }
+
+];
+
+let currentRound = 0;
+let score = 0;
+
+const questionElement =
+    document.getElementById("question");
+
+const cluesElement =
+    document.getElementById("clues");
+
+const answersElement =
+    document.getElementById("answers");
+
+const feedbackElement =
+    document.getElementById("feedback");
+
+const nextButton =
+    document.getElementById("next-button");
+
+const roundLabel =
+    document.getElementById("round-label");
+
+
+function loadRound() {
+
+    const song = mysterySongs[currentRound];
+
+    roundLabel.textContent =
+        `Round ${currentRound + 1} of ${mysterySongs.length}`;
+
+    questionElement.textContent =
+        song.question;
+
+    feedbackElement.textContent = "";
+
+    nextButton.style.display = "none";
+
+    cluesElement.innerHTML = "";
+
+    song.clues.forEach((clue, index) => {
+
+        const clueElement =
+            document.createElement("p");
+
+        clueElement.className =
+            "mystery-clue";
+
+        clueElement.textContent =
+            `${index + 1}. ${clue}`;
+
+        cluesElement.appendChild(clueElement);
+
+    });
+
+    answersElement.innerHTML = "";
+
+    song.answers.forEach(answer => {
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "mystery-answer";
+
+        button.textContent =
+            answer;
+
+        button.addEventListener(
+            "click",
+            () => checkAnswer(answer)
+        );
+
+        answersElement.appendChild(button);
+
+    });
+
+}
+
+
+function checkAnswer(answer) {
+
+    const song =
+        mysterySongs[currentRound];
+
+    const buttons =
+        document.querySelectorAll(
+            ".mystery-answer"
+        );
+
+    buttons.forEach(button => {
+
+        button.disabled = true;
+
+        if (button.textContent === song.correct) {
+            button.classList.add("correct-answer");
+        }
+
+    });
+
+    if (answer === song.correct) {
+
+        score++;
+
+        feedbackElement.textContent =
+            "🎉 Correct! +1 point";
+
+    } else {
+
+        feedbackElement.textContent =
+            `❌ Not quite! The answer was "${song.correct}".`;
+
+    }
+
+    nextButton.style.display =
+        "inline-block";
+
+}
+
+
+nextButton.addEventListener(
+    "click",
+    () => {
+
+        currentRound++;
+
+        if (currentRound < mysterySongs.length) {
+
+            loadRound();
+
+        } else {
+
+            showFinalResult();
+
+        }
+
+    }
+);
+
+
+function showFinalResult() {
+
+    roundLabel.textContent =
+        "🎉 Challenge Complete";
+
+    questionElement.textContent =
+        `You scored ${score} out of ${mysterySongs.length}!`;
+
+    cluesElement.innerHTML = "";
+
+    answersElement.innerHTML = "";
+
+    feedbackElement.textContent =
+        score === mysterySongs.length
+            ? "🏆 Perfect score! You're a Music Master!"
+            : "🎵 Great job! Try again and beat your score.";
+
+    nextButton.style.display =
+        "none";
+
+}
+
+
+loadRound();
+
+</script>
+
+</body>
+</html>
+```
