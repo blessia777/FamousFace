@@ -352,8 +352,6 @@ const category = urlParams.get("category") || "music";
 
 const isDailyChallenge =
     urlParams.get("daily") === "1";
-// Check whether this is the Daily Challenge
-const isDailyChallenge = urlParams.get("daily") === "1";
 
 
 // Create a repeatable number from today's date
