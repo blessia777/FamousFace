@@ -804,6 +804,88 @@ nextButton.addEventListener(
 
     }
 );
+    //SAVE SCORE TO SUPABASE
+async function saveDailyMysteryScore() {
+
+    try {
+
+        /*
+         * We use the same Supabase configuration
+         * already used by FamousFace.
+         */
+
+        const playerName =
+            localStorage.getItem("famousFacePlayerName") ||
+            "Anonymous";
+
+
+        const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/scores`,
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json",
+                    "apikey": SUPABASE_KEY,
+                    "Authorization": `Bearer ${SUPABASE_KEY}`,
+                    "Prefer": "return=minimal"
+                },
+
+                body: JSON.stringify({
+
+                    player_name: playerName,
+
+                    category: "mystery_song",
+
+                    score: score,
+
+                    total_questions: 1,
+
+                    /*
+                     * Maximum score is 100.
+                     */
+
+                    percentage: score,
+
+                    daily_challenge: true
+
+                })
+            }
+        );
+
+
+        if (!response.ok) {
+
+            const errorText =
+                await response.text();
+
+            console.error(
+                "Daily Mystery Song Supabase error:",
+                errorText
+            );
+
+            return;
+
+        }
+
+
+        console.log(
+            "Daily Mystery Song score saved!"
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Could not save Daily Mystery Song score:",
+            error
+        );
+
+    }
+
+}
+```
+
 
 /* ==========================================
    FINAL RESULT
@@ -812,6 +894,7 @@ nextButton.addEventListener(
 
 function showFinalResult() {
 saveDailyResult();
+saveDailyMysteryScore();
     roundLabel.textContent =
         "📅 Daily Mystery Song Complete";
     const streakMessage =
@@ -864,6 +947,7 @@ saveDailyResult();
 ========================================== */
 
 loadRound();
+<script src="supabase-config.js"></script>
 
 </script>
 
