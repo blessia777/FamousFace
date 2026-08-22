@@ -376,6 +376,95 @@ let score = 0;
 let streak = 0;
 let currentClue = 0;
 let roundFinished = false;
+    /* ==========================================
+   DAILY PROGRESS
+========================================== */
+
+const todayKey = new Date().toISOString().split("T")[0];
+
+const savedDailyData =
+    JSON.parse(localStorage.getItem("famousFaceDailySong")) || {
+        lastPlayed: null,
+        streak: 0,
+        completed: false,
+        score: 0
+    };
+
+let dailyStreak = savedDailyData.streak;
+
+
+/* ==========================================
+   SAVE DAILY RESULT
+========================================== */
+
+function saveDailyResult() {
+
+    const previousDate =
+        savedDailyData.lastPlayed;
+
+    let newStreak =
+        dailyStreak;
+
+
+    if (previousDate === todayKey) {
+
+        // Already completed today.
+        newStreak = dailyStreak;
+
+    } else if (previousDate) {
+
+        const previous =
+            new Date(previousDate);
+
+        const today =
+            new Date(todayKey);
+
+        const difference =
+            Math.round(
+                (today - previous) /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        if (difference === 1) {
+
+            newStreak++;
+
+        } else {
+
+            newStreak = 1;
+
+        }
+
+    } else {
+
+        newStreak = 1;
+
+    }
+
+
+    dailyStreak = newStreak;
+
+
+    const dailyData = {
+
+        lastPlayed: todayKey,
+
+        streak: dailyStreak,
+
+        completed: true,
+
+        score: score
+
+    };
+
+
+    localStorage.setItem(
+        "famousFaceDailySong",
+        JSON.stringify(dailyData)
+    );
+
+}
 
 /* ==========================================
    DAILY MYSTERY SONG
@@ -720,11 +809,13 @@ nextButton.addEventListener(
    FINAL RESULT
 ========================================== */
 
-```javascript
-function showFinalResult() {
 
+function showFinalResult() {
+saveDailyResult();
     roundLabel.textContent =
         "📅 Daily Mystery Song Complete";
+    const streakMessage =
+    `🔥 Your Daily Streak: ${dailyStreak} day${dailyStreak === 1 ? "" : "s"}`;
 
 
     questionElement.textContent =
