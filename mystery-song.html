@@ -372,15 +372,42 @@ const mysterySongs = [
 ========================================== */
 
 let currentRound = 0;
-
 let score = 0;
-
 let streak = 0;
-
 let currentClue = 0;
-
 let roundFinished = false;
 
+/* ==========================================
+   DAILY MYSTERY SONG
+========================================== */
+
+function getDailySongIndex() {
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const day = today.getDate();
+
+    /*
+       Create a number from today's date.
+       This means everyone gets the same
+       song on the same day.
+    */
+
+    const dateNumber =
+        year * 10000 +
+        (month + 1) * 100 +
+        day;
+
+    return dateNumber % mysterySongs.length;
+}
+
+const dailySongIndex =
+    getDailySongIndex();
+
+const dailySong =
+    mysterySongs[dailySongIndex];
 
 /* ==========================================
    PAGE ELEMENTS
@@ -420,18 +447,16 @@ const streakElement =
 
 function loadRound() {
 
-    const song =
-        mysterySongs[currentRound];
+   const song = dailySong;
 
 
     currentClue = 0;
 
     roundFinished = false;
 
-
-    roundLabel.textContent =
-        `Round ${currentRound + 1} of ${mysterySongs.length}`;
-
+roundLabel.textContent =
+    "📅 Today's Mystery Song";
+ 
 
     questionElement.textContent =
         song.question;
@@ -686,38 +711,24 @@ nextButton.addEventListener(
     "click",
     () => {
 
-        currentRound++;
-
-
-        if (
-            currentRound <
-            mysterySongs.length
-        ) {
-
-            loadRound();
-
-        } else {
-
-            showFinalResult();
-
-        }
+        showFinalResult();
 
     }
 );
-
 
 /* ==========================================
    FINAL RESULT
 ========================================== */
 
+```javascript
 function showFinalResult() {
 
     roundLabel.textContent =
-        "🎉 Challenge Complete";
+        "📅 Daily Mystery Song Complete";
 
 
     questionElement.textContent =
-        `You scored ${score} points!`;
+        `You scored ${score} points today!`;
 
 
     cluesElement.innerHTML = "";
@@ -735,65 +746,27 @@ function showFinalResult() {
 
 
     nextButton.textContent =
-        "🔄 Play Again";
+        "🔄 Play Today's Challenge Again";
 
 
-    if (score >= 250) {
-
-        feedbackElement.innerHTML =
-            "🏆 AMAZING! You're a true Music Master!";
-
-    } else if (score >= 150) {
+    if (score >= 100) {
 
         feedbackElement.innerHTML =
-            "🔥 Great job! Your music knowledge is strong!";
+            "🏆 AMAZING! You solved today's Mystery Song using the first clue!";
+
+    } else if (score >= 75) {
+
+        feedbackElement.innerHTML =
+            "🔥 Great job! You solved today's Mystery Song!";
 
     } else {
 
         feedbackElement.innerHTML =
-            "🎵 Nice try! Play again and beat your score!";
+            "🎵 Good try! Come back tomorrow for a new Mystery Song!";
 
     }
 
 }
-
-
-/* ==========================================
-   PLAY AGAIN
-========================================== */
-
-nextButton.addEventListener(
-    "click",
-    restartGame
-);
-
-
-function restartGame() {
-
-    if (
-        currentRound <
-        mysterySongs.length
-    ) {
-
-        return;
-
-    }
-
-
-    currentRound = 0;
-
-    score = 0;
-
-    streak = 0;
-
-    nextButton.textContent =
-        "Next Song →";
-
-
-    loadRound();
-
-}
-
 
 /* ==========================================
    START GAME
@@ -806,4 +779,3 @@ loadRound();
 </body>
 
 </html>
-```
