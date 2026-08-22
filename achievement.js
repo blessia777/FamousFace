@@ -83,6 +83,38 @@ function calculateDailyStreak(history) {
 
 const dailyStreak =
     calculateDailyStreak(dailyHistory);
+    /* ==========================================
+   MYSTERY SONG PROGRESS
+========================================== */
+
+let mysterySongData = null;
+
+try {
+
+    mysterySongData =
+        JSON.parse(
+            localStorage.getItem("famousFaceDailySong")
+        );
+
+} catch (error) {
+
+    mysterySongData = null;
+
+}
+
+const mysterySongCompleted =
+    mysterySongData &&
+    mysterySongData.completed === true;
+
+const mysterySongScore =
+    mysterySongData
+        ? Number(mysterySongData.score) || 0
+        : 0;
+
+const mysterySongStreak =
+    mysterySongData
+        ? Number(mysterySongData.streak) || 0
+        : 0;
     // Category counts
     const categoryCount = function (category) {
 
@@ -156,7 +188,7 @@ const dailyStreak =
             name: "Daily Warrior",
             description: "Complete 7 Daily Challenges.",
             unlocked: dailyChallenges >= 7
-        }
+        },
         {
     icon: "🔥",
     name: "3-Day Streak",
@@ -169,6 +201,26 @@ const dailyStreak =
     name: "7-Day Streak",
     description: "Complete Daily Challenges for 7 consecutive days.",
     unlocked: dailyStreak >= 7
+},
+        {
+    icon: "🎵",
+    name: "Mystery Song Starter",
+    description: "Complete your first Daily Mystery Song.",
+    unlocked: mysterySongCompleted
+},
+
+{
+    icon: "🥇",
+    name: "Perfect Guess",
+    description: "Score 100 points in Daily Mystery Song.",
+    unlocked: mysterySongScore >= 100
+},
+
+{
+    icon: "🎧",
+    name: "Mystery Music Master",
+    description: "Maintain a 7-day Daily Mystery Song streak.",
+    unlocked: mysterySongStreak >= 7
 }
 
     ];
