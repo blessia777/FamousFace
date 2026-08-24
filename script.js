@@ -941,8 +941,120 @@ const dailyChallengeData = {
             ],
             correct: "Ice Cube"
         }
-    ]
+    ],
+moviesDaily: [
 
+    {
+        question: "Who played Jack Dawson in Titanic?",
+        answers: [
+            "Leonardo DiCaprio",
+            "Brad Pitt",
+            "Tom Cruise",
+            "Matt Damon"
+        ],
+        correct: "Leonardo DiCaprio"
+    },
+
+    {
+        question: "Who directed Jurassic Park?",
+        answers: [
+            "Steven Spielberg",
+            "James Cameron",
+            "Christopher Nolan",
+            "George Lucas"
+        ],
+        correct: "Steven Spielberg"
+    },
+
+    {
+        question: "Which actor played Forrest Gump?",
+        answers: [
+            "Tom Hanks",
+            "Tom Cruise",
+            "Robin Williams",
+            "Kevin Costner"
+        ],
+        correct: "Tom Hanks"
+    },
+
+    {
+        question: "Which film features the character Jack Sparrow?",
+        answers: [
+            "Pirates of the Caribbean",
+            "The Lord of the Rings",
+            "Indiana Jones",
+            "The Mummy"
+        ],
+        correct: "Pirates of the Caribbean"
+    },
+
+    {
+        question: "Who played Hermione Granger in the Harry Potter films?",
+        answers: [
+            "Emma Watson",
+            "Keira Knightley",
+            "Natalie Portman",
+            "Anne Hathaway"
+        ],
+        correct: "Emma Watson"
+    },
+
+    {
+        question: "Which actor played Iron Man in the Marvel Cinematic Universe?",
+        answers: [
+            "Robert Downey Jr.",
+            "Chris Evans",
+            "Chris Hemsworth",
+            "Mark Ruffalo"
+        ],
+        correct: "Robert Downey Jr."
+    },
+
+    {
+        question: "Who directed Avatar?",
+        answers: [
+            "James Cameron",
+            "Steven Spielberg",
+            "Christopher Nolan",
+            "Peter Jackson"
+        ],
+        correct: "James Cameron"
+    },
+
+    {
+        question: "Which movie features the fictional archaeologist Indiana Jones?",
+        answers: [
+            "Raiders of the Lost Ark",
+            "The Matrix",
+            "Gladiator",
+            "Inception"
+        ],
+        correct: "Raiders of the Lost Ark"
+    },
+
+    {
+        question: "Who played the Joker in The Dark Knight?",
+        answers: [
+            "Heath Ledger",
+            "Joaquin Phoenix",
+            "Jack Nicholson",
+            "Christian Bale"
+        ],
+        correct: "Heath Ledger"
+    },
+
+    {
+        question: "Which film is about a young lion named Simba?",
+        answers: [
+            "The Lion King",
+            "Madagascar",
+            "Finding Nemo",
+            "Zootopia"
+        ],
+        correct: "The Lion King"
+    }
+
+]
 };
 
 // Get selected category
