@@ -345,6 +345,125 @@ const quizData = {
         }
     ]
 };
+// ==========================================
+// FAMOUSFACE DAILY CHALLENGE QUESTION BANK
+// ==========================================
+
+const dailyChallengeData = {
+
+    rap: [
+        {
+            question: "Which rapper is known by the stage name Eminem?",
+            answers: [
+                "Marshall Mathers",
+                "Calvin Broadus",
+                "Shawn Carter",
+                "Aubrey Graham"
+            ],
+            correct: "Marshall Mathers"
+        },
+
+        {
+            question: "Which rapper released the album To Pimp a Butterfly?",
+            answers: [
+                "Kendrick Lamar",
+                "Drake",
+                "J. Cole",
+                "Nas"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+        {
+            question: "Which rapper is widely known as Jay-Z?",
+            answers: [
+                "Shawn Carter",
+                "Kanye West",
+                "Curtis Jackson",
+                "Andre Young"
+            ],
+            correct: "Shawn Carter"
+        },
+
+        {
+            question: "Which rapper founded the record label Aftermath Entertainment?",
+            answers: [
+                "Dr. Dre",
+                "Snoop Dogg",
+                "Ice Cube",
+                "50 Cent"
+            ],
+            correct: "Dr. Dre"
+        },
+
+        {
+            question: "Which rapper is associated with the album Illmatic?",
+            answers: [
+                "Nas",
+                "Eminem",
+                "Lil Wayne",
+                "Future"
+            ],
+            correct: "Nas"
+        },
+
+        {
+            question: "Which artist released the album The Miseducation of Lauryn Hill?",
+            answers: [
+                "Lauryn Hill",
+                "Nicki Minaj",
+                "Missy Elliott",
+                "Cardi B"
+            ],
+            correct: "Lauryn Hill"
+        },
+
+        {
+            question: "Which rapper is known as Snoop Dogg?",
+            answers: [
+                "Calvin Broadus",
+                "Marshall Mathers",
+                "Shawn Carter",
+                "Travis Scott"
+            ],
+            correct: "Calvin Broadus"
+        },
+
+        {
+            question: "Which rapper released the album 2014 Forest Hills Drive?",
+            answers: [
+                "J. Cole",
+                "Kendrick Lamar",
+                "Drake",
+                "Future"
+            ],
+            correct: "J. Cole"
+        },
+
+        {
+            question: "Which rapper is known for the album The College Dropout?",
+            answers: [
+                "Kanye West",
+                "Jay-Z",
+                "Lil Wayne",
+                "Nas"
+            ],
+            correct: "Kanye West"
+        },
+
+        {
+            question: "Which rapper is known by the real name Aubrey Graham?",
+            answers: [
+                "Drake",
+                "Future",
+                "Travis Scott",
+                "Post Malone"
+            ],
+            correct: "Drake"
+        }
+    ]
+
+};
 
 // Get selected category
 const urlParams = new URLSearchParams(window.location.search);
@@ -407,29 +526,28 @@ function seededShuffle(array, seed) {
 // Get Daily Challenge questions
 function getDailyChallengeQuestions() {
 
-    const categories = [
-        "music",
-        "movies",
-        "sports",
-        "art",
-        "history"
-    ];
+    const dailyPool =
+        dailyChallengeData.rap || [];
+
+    if (dailyPool.length < 5) {
+
+        console.error(
+            "Not enough Daily Challenge questions."
+        );
+
+        return dailyPool;
+    }
 
     const seed = getDailySeed();
 
-    let dailyQuestions = [];
+    const shuffled =
+        seededShuffle(
+            dailyPool,
+            seed
+        );
 
-    categories.forEach((categoryName, index) => {
-
-        const categoryQuestions =
-            quizData[categoryName] || [];
-
-        const shuffled =
-            seededShuffle(
-                categoryQuestions,
-                seed + index
-            );
-
+    return shuffled.slice(0, 5);
+}
         // Take 2 questions from each category
         dailyQuestions.push(
             ...shuffled.slice(0, 2)
