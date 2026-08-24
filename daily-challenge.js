@@ -16,36 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const challenges = [
-        {
-            category: "music",
-            name: "Music Challenge",
-            description:
-                "Test your knowledge of famous singers, musicians and bands."
-        },
-        {
-            category: "movies",
-            name: "Movies Challenge",
-            description:
-                "Challenge yourself with famous movies, actors and film trivia."
-        },
-        {
-            category: "sports",
-            name: "Sports Challenge",
-            description:
-                "Test your knowledge of famous athletes and sporting events."
-        },
-        {
-            category: "art",
-            name: "Art Challenge",
-            description:
-                "Explore famous artists, paintings and masterpieces."
-        },
-        {
-            category: "history",
-            name: "History Challenge",
-            description:
-                "Test your knowledge of famous historical people and events."
-        }
+    {
+        category: "rap",
+        name: "Rap Battle",
+        description:
+            "🔥 Test your knowledge of rappers, albums, songs, hip-hop history and rap culture."
+    }
+
     ];
 
     // Get today's date
