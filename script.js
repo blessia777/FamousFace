@@ -670,15 +670,18 @@ if (isDailyChallenge && typeof gtag === "function") {
 }
 
     // Save player's latest score locally
-    const playerScore = {
-        name: playerName,
-        category: category,
-        score: score,
-        total: questions.length,
-        percentage: percentage,
-        dailyChallenge: isDailyChallenge,
-        date: new Date().toISOString().split("T")[0]
-    };
+    const savedPlayerName =
+    localStorage.getItem("famousFacePlayerName");
+
+const playerScore = {
+    name: savedPlayerName || playerName || "Anonymous",
+    category: category,
+    score: score,
+    total: questions.length,
+    percentage: percentage,
+    dailyChallenge: isDailyChallenge,
+    date: new Date().toISOString().split("T")[0]
+};
 
     localStorage.setItem(
         "famousFaceLatestScore",
