@@ -1052,10 +1052,586 @@ moviesDaily: [
             "Zootopia"
         ],
         correct: "The Lion King"
-    }
+    },
+    // ==============================
+// MOVIE ICONS — QUESTIONS 11–50
+// ==============================
 
+{
+    question: "Who played Neo in The Matrix?",
+    answers: [
+        "Keanu Reeves",
+        "Brad Pitt",
+        "Tom Cruise",
+        "Christian Bale"
+    ],
+    correct: "Keanu Reeves"
+},
+
+{
+    question: "Who played Katniss Everdeen in The Hunger Games films?",
+    answers: [
+        "Jennifer Lawrence",
+        "Emma Stone",
+        "Scarlett Johansson",
+        "Natalie Portman"
+    ],
+    correct: "Jennifer Lawrence"
+},
+
+{
+    question: "Which actor played Captain Jack Sparrow?",
+    answers: [
+        "Johnny Depp",
+        "Orlando Bloom",
+        "Jude Law",
+        "Hugh Jackman"
+    ],
+    correct: "Johnny Depp"
+},
+
+{
+    question: "Who played Black Panther in the Marvel Cinematic Universe?",
+    answers: [
+        "Chadwick Boseman",
+        "Michael B. Jordan",
+        "Anthony Mackie",
+        "Idris Elba"
+    ],
+    correct: "Chadwick Boseman"
+},
+
+{
+    question: "Who played Wonder Woman in the 2017 film?",
+    answers: [
+        "Gal Gadot",
+        "Brie Larson",
+        "Charlize Theron",
+        "Emily Blunt"
+    ],
+    correct: "Gal Gadot"
+},
+
+{
+    question: "Who played the title character in Gladiator?",
+    answers: [
+        "Russell Crowe",
+        "Gerard Butler",
+        "Hugh Jackman",
+        "Colin Farrell"
+    ],
+    correct: "Russell Crowe"
+},
+
+{
+    question: "Who played the title character in Edward Scissorhands?",
+    answers: [
+        "Johnny Depp",
+        "Jim Carrey",
+        "Tom Hanks",
+        "Leonardo DiCaprio"
+    ],
+    correct: "Johnny Depp"
+},
+
+{
+    question: "Who played the lead role in Cast Away?",
+    answers: [
+        "Tom Hanks",
+        "Matt Damon",
+        "Tom Cruise",
+        "Bruce Willis"
+    ],
+    correct: "Tom Hanks"
+},
+
+{
+    question: "Who played Batman in The Dark Knight trilogy?",
+    answers: [
+        "Christian Bale",
+        "Ben Affleck",
+        "Michael Keaton",
+        "George Clooney"
+    ],
+    correct: "Christian Bale"
+},
+
+{
+    question: "Who played Wolverine in the X-Men films for many years?",
+    answers: [
+        "Hugh Jackman",
+        "Chris Hemsworth",
+        "Ryan Reynolds",
+        "Jason Momoa"
+    ],
+    correct: "Hugh Jackman"
+},
+
+// ==============================
+// FAMOUS MOVIES
+// ==============================
+
+{
+    question: "Which movie follows a young wizard named Harry Potter?",
+    answers: [
+        "Harry Potter",
+        "The Hobbit",
+        "Percy Jackson",
+        "The Chronicles of Narnia"
+    ],
+    correct: "Harry Potter"
+},
+
+{
+    question: "Which film features the fictional world of Pandora?",
+    answers: [
+        "Avatar",
+        "Interstellar",
+        "Dune",
+        "The Martian"
+    ],
+    correct: "Avatar"
+},
+
+{
+    question: "Which movie follows a group attempting a major dream-heist?",
+    answers: [
+        "Inception",
+        "Tenet",
+        "Interstellar",
+        "The Prestige"
+    ],
+    correct: "Inception"
+},
+
+{
+    question: "Which film features the character Rocky Balboa?",
+    answers: [
+        "Rocky",
+        "Creed",
+        "Raging Bull",
+        "Warrior"
+    ],
+    correct: "Rocky"
+},
+
+{
+    question: "Which film is set largely on the fictional planet Arrakis?",
+    answers: [
+        "Dune",
+        "Avatar",
+        "Star Wars",
+        "Interstellar"
+    ],
+    correct: "Dune"
+},
+
+{
+    question: "Which movie features the character Forrest Gump?",
+    answers: [
+        "Forrest Gump",
+        "The Green Mile",
+        "Cast Away",
+        "Saving Private Ryan"
+    ],
+    correct: "Forrest Gump"
+},
+
+{
+    question: "Which film features the fictional archaeologist Indiana Jones?",
+    answers: [
+        "Raiders of the Lost Ark",
+        "The Mummy",
+        "National Treasure",
+        "King Kong"
+    ],
+    correct: "Raiders of the Lost Ark"
+},
+
+{
+    question: "Which movie features the fictional character Shrek?",
+    answers: [
+        "Shrek",
+        "Tangled",
+        "Frozen",
+        "Moana"
+    ],
+    correct: "Shrek"
+},
+
+{
+    question: "Which film follows a clown-themed villain known as the Joker?",
+    answers: [
+        "Joker",
+        "Venom",
+        "Logan",
+        "Morbius"
+    ],
+    correct: "Joker"
+},
+
+{
+    question: "Which film features a theme park filled with cloned dinosaurs?",
+    answers: [
+        "Jurassic Park",
+        "King Kong",
+        "Godzilla",
+        "The Lost World"
+    ],
+    correct: "Jurassic Park"
+},
+
+// ==============================
+// AWARDS & ACHIEVEMENTS
+// ==============================
+
+{
+    question: "Which film won the Academy Award for Best Picture at the 1998 ceremony?",
+    answers: [
+        "Titanic",
+        "Good Will Hunting",
+        "The Full Monty",
+        "L.A. Confidential"
+    ],
+    correct: "Titanic"
+},
+
+{
+    question: "Which film won Best Picture at the 2020 Academy Awards?",
+    answers: [
+        "Parasite",
+        "1917",
+        "Joker",
+        "Ford v Ferrari"
+    ],
+    correct: "Parasite"
+},
+
+{
+    question: "Who became the first woman to win the Academy Award for Best Director?",
+    answers: [
+        "Kathryn Bigelow",
+        "Greta Gerwig",
+        "Sofia Coppola",
+        "Jane Campion"
+    ],
+    correct: "Kathryn Bigelow"
+},
+
+{
+    question: "Which film won Best Picture at the 1994 Academy Awards?",
+    answers: [
+        "Schindler's List",
+        "Pulp Fiction",
+        "Forrest Gump",
+        "The Shawshank Redemption"
+    ],
+    correct: "Schindler's List"
+},
+
+{
+    question: "Which actor won the Academy Award for Best Actor for The Revenant?",
+    answers: [
+        "Leonardo DiCaprio",
+        "Matt Damon",
+        "Tom Hardy",
+        "Michael Fassbender"
+    ],
+    correct: "Leonardo DiCaprio"
+},
+
+{
+    question: "Which actress won the Academy Award for Best Actress for La La Land?",
+    answers: [
+        "Emma Stone",
+        "Natalie Portman",
+        "Meryl Streep",
+        "Cate Blanchett"
+    ],
+    correct: "Emma Stone"
+},
+
+// ==============================
+// DIRECTORS
+// ==============================
+
+{
+    question: "Who directed Pulp Fiction?",
+    answers: [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Steven Spielberg",
+        "Francis Ford Coppola"
+    ],
+    correct: "Quentin Tarantino"
+},
+
+{
+    question: "Who directed The Lord of the Rings trilogy?",
+    answers: [
+        "Peter Jackson",
+        "James Cameron",
+        "George Lucas",
+        "Christopher Nolan"
+    ],
+    correct: "Peter Jackson"
+},
+
+{
+    question: "Who directed The Dark Knight?",
+    answers: [
+        "Christopher Nolan",
+        "Tim Burton",
+        "Zack Snyder",
+        "James Gunn"
+    ],
+    correct: "Christopher Nolan"
+},
+
+{
+    question: "Who directed The Godfather?",
+    answers: [
+        "Francis Ford Coppola",
+        "Martin Scorsese",
+        "Brian De Palma",
+        "Steven Spielberg"
+    ],
+    correct: "Francis Ford Coppola"
+},
+
+{
+    question: "Who directed E.T. the Extra-Terrestrial?",
+    answers: [
+        "Steven Spielberg",
+        "George Lucas",
+        "Robert Zemeckis",
+        "Ridley Scott"
+    ],
+    correct: "Steven Spielberg"
+},
+
+{
+    question: "Who directed the Lord of the Rings films?",
+    answers: [
+        "Peter Jackson",
+        "Christopher Nolan",
+        "James Cameron",
+        "Ridley Scott"
+    ],
+    correct: "Peter Jackson"
+},
+
+// ==============================
+// FAMOUS MOVIE FACTS
+// ==============================
+
+{
+    question: "Which fictional school does Harry Potter attend?",
+    answers: [
+        "Hogwarts",
+        "Nevermore Academy",
+        "Xavier's School",
+        "Brakebills"
+    ],
+    correct: "Hogwarts"
+},
+
+{
+    question: "What is the name of the fictional kingdom in Frozen?",
+    answers: [
+        "Arendelle",
+        "Genovia",
+        "Wakanda",
+        "Narnia"
+    ],
+    correct: "Arendelle"
+},
+
+{
+    question: "What is the name of the cowboy toy in Toy Story?",
+    answers: [
+        "Woody",
+        "Buzz",
+        "Andy",
+        "Jessie"
+    ],
+    correct: "Woody"
+},
+
+{
+    question: "What is the name of the space ranger toy in Toy Story?",
+    answers: [
+        "Buzz Lightyear",
+        "Woody",
+        "Zurg",
+        "Rex"
+    ],
+    correct: "Buzz Lightyear"
+},
+
+{
+    question: "Which fictional African nation is featured in Black Panther?",
+    answers: [
+        "Wakanda",
+        "Zamunda",
+        "Genovia",
+        "Latveria"
+    ],
+    correct: "Wakanda"
+},
+
+{
+    question: "What is the name of the fish that Marlin searches for in Finding Nemo?",
+    answers: [
+        "Nemo",
+        "Dory",
+        "Bruce",
+        "Gill"
+    ],
+    correct: "Nemo"
+},
+
+// ==============================
+// SUPERHEROES & FRANCHISES
+// ==============================
+
+{
+    question: "Which superhero is also known as Bruce Wayne?",
+    answers: [
+        "Batman",
+        "Superman",
+        "Iron Man",
+        "Spider-Man"
+    ],
+    correct: "Batman"
+},
+
+{
+    question: "Which superhero is also known as Peter Parker?",
+    answers: [
+        "Spider-Man",
+        "Superman",
+        "Batman",
+        "Ant-Man"
+    ],
+    correct: "Spider-Man"
+},
+
+{
+    question: "Which superhero is also known as Clark Kent?",
+    answers: [
+        "Superman",
+        "Batman",
+        "Captain America",
+        "Thor"
+    ],
+    correct: "Superman"
+},
+
+{
+    question: "Which superhero is known as Steve Rogers?",
+    answers: [
+        "Captain America",
+        "Iron Man",
+        "Thor",
+        "Hulk"
+    ],
+    correct: "Captain America"
+},
+
+{
+    question: "Which superhero is known as Tony Stark?",
+    answers: [
+        "Iron Man",
+        "Spider-Man",
+        "Batman",
+        "Doctor Strange"
+    ],
+    correct: "Iron Man"
+},
+
+{
+    question: "Which superhero is associated with the fictional African nation of Wakanda?",
+    answers: [
+        "Black Panther",
+        "Falcon",
+        "Blade",
+        "Luke Cage"
+    ],
+    correct: "Black Panther"
+},
+
+// ==============================
+// INTERNATIONAL CINEMA
+// ==============================
+
+{
+    question: "Which South Korean film became the first non-English-language film to win Best Picture at the Academy Awards?",
+    answers: [
+        "Parasite",
+        "Oldboy",
+        "Train to Busan",
+        "The Handmaiden"
+    ],
+    correct: "Parasite"
+},
+
+{
+    question: "Who directed the South Korean film Parasite?",
+    answers: [
+        "Bong Joon Ho",
+        "Park Chan-wook",
+        "Lee Chang-dong",
+        "Kim Jee-woon"
+    ],
+    correct: "Bong Joon Ho"
+},
+
+{
+    question: "Which Indian actor is famous for starring in the film Dangal?",
+    answers: [
+        "Aamir Khan",
+        "Shah Rukh Khan",
+        "Salman Khan",
+        "Akshay Kumar"
+    ],
+    correct: "Aamir Khan"
+},
+
+{
+    question: "Which Indian film industry is commonly associated with Mumbai?",
+    answers: [
+        "Bollywood",
+        "Hollywood",
+        "Nollywood",
+        "Kino"
+    ],
+    correct: "Bollywood"
+},
+
+{
+    question: "Which Japanese filmmaker directed Spirited Away?",
+    answers: [
+        "Hayao Miyazaki",
+        "Akira Kurosawa",
+        "Hirokazu Kore-eda",
+        "Takashi Miike"
+    ],
+    correct: "Hayao Miyazaki"
+},
+
+{
+    question: "Which animated film from Studio Ghibli won the Academy Award for Best Animated Feature in 2003?",
+    answers: [
+        "Spirited Away",
+        "My Neighbor Totoro",
+        "Howl's Moving Castle",
+        "Ponyo"
+    ],
+    correct: "Spirited Away"
+}
 ]
-};
+
 
 // Get selected category
 const urlParams = new URLSearchParams(window.location.search);
