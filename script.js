@@ -905,6 +905,17 @@ async function saveScoreToSupabase(playerScore) {
 
     try {
 
+        // Get the saved player name
+        const savedPlayerName =
+            localStorage.getItem("famousFacePlayerName");
+
+        // Use saved name first, then playerScore.name,
+        // and finally "Anonymous" if neither exists
+        const playerName =
+            savedPlayerName ||
+            playerScore.name ||
+            "Anonymous";
+
         const response = await fetch(
             `${SUPABASE_URL}/rest/v1/scores`,
             {
@@ -918,12 +929,13 @@ async function saveScoreToSupabase(playerScore) {
                 },
 
                 body: JSON.stringify({
-                    player_name: playerScore.name,
+                    player_name: playerName,
                     category: playerScore.category,
                     score: playerScore.score,
                     total_questions: playerScore.total,
                     percentage: playerScore.percentage,
-                    daily_challenge: playerScore.dailyChallenge || false
+                    daily_challenge:
+                        playerScore.dailyChallenge || false
                 })
             }
         );
@@ -942,7 +954,7 @@ async function saveScoreToSupabase(playerScore) {
         }
 
         console.log(
-            "Score successfully saved to Supabase!"
+            `Score successfully saved for ${playerName}!`
         );
 
     } catch (error) {
