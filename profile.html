@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile - FamousFace</title>
+
+    <meta name="description"
+          content="View your FamousFace quiz profile, scores, achievements and progress.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="famousface-logo.png" alt="FamousFace Quiz">
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#categories">Quizzes</a>
+        <a href="index.html#leaderboard">Leaderboard</a>
+        <a href="profile.html">My Profile</a>
+    </nav>
+
+    <main class="profile-page">
+
+        <section class="profile-header">
+
+            <p class="section-label">👤 FAMOUSFACE PROFILE</p>
+
+            <h1>Welcome, <span id="profile-name">Player</span>!</h1>
+
+            <p>
+                Track your FamousFace journey, scores and achievements.
+            </p>
+
+        </section>
+
+        <!-- Main statistics -->
+
+        <section class="progress-section">
+
+            <div class="progress-cards">
+
+                <div class="progress-card">
+                    <span class="progress-icon">🎮</span>
+                    <h3>Quizzes Played</h3>
+                    <strong id="profile-quizzes">0</strong>
+                </div>
+
+                <div class="progress-card">
+                    <span class="progress-icon">🏆</span>
+                    <h3>Best Score</h3>
+                    <strong id="profile-best">0%</strong>
+                </div>
+
+                <div class="progress-card">
+                    <span class="progress-icon">📊</span>
+                    <h3>Average Score</h3>
+                    <strong id="profile-average">0%</strong>
+                </div>
+
+                <div class="progress-card">
+                    <span class="progress-icon">🔥</span>
+                    <h3>Daily Streak</h3>
+                    <strong id="profile-streak">0 days</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Category progress -->
+
+        <section class="quiz-section">
+
+            <p class="section-label">📚 YOUR CATEGORIES</p>
+
+            <h2>Category Progress</h2>
+
+            <div class="category-progress-grid">
+
+                <div class="category-progress-card">
+                    <span>🎵</span>
+                    <strong>Music</strong>
+                    <p id="profile-music">0 plays • Best: 0%</p>
+                </div>
+
+                <div class="category-progress-card">
+                    <span>🎬</span>
+                    <strong>Movies</strong>
+                    <p id="profile-movies">0 plays • Best: 0%</p>
+                </div>
+
+                <div class="category-progress-card">
+                    <span>⚽</span>
+                    <strong>Sports</strong>
+                    <p id="profile-sports">0 plays • Best: 0%</p>
+                </div>
+
+                <div class="category-progress-card">
+                    <span>🎨</span>
+                    <strong>Art</strong>
+                    <p id="profile-art">0 plays • Best: 0%</p>
+                </div>
+
+                <div class="category-progress-card">
+                    <span>🌍</span>
+                    <strong>History</strong>
+                    <p id="profile-history">0 plays • Best: 0%</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Recent quizzes -->
+
+        <section class="quiz-section">
+
+            <p class="section-label">🕒 RECENT ACTIVITY</p>
+
+            <h2>Recent Quizzes</h2>
+
+            <div id="recent-quizzes">
+                <p>No quizzes played yet.</p>
+            </div>
+
+        </section>
+
+        <!-- Achievements -->
+
+        <section class="achievements-section">
+
+            <p class="section-label">🏅 ACHIEVEMENTS</p>
+
+            <h2>Your Achievements</h2>
+
+            <div id="profile-achievements"
+                 class="achievements-grid">
+
+                <p>Loading achievements...</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 FamousFace. All rights reserved.</p>
+
+        <p>
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="privacy.html">Privacy Policy</a>
+        </p>
+
+    </footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================
+       PLAYER NAME
+    ========================= */
+
+    const playerName =
+        localStorage.getItem("famousFacePlayerName") ||
+        "Player";
+
+    document.getElementById("profile-name")
+        .textContent = playerName;
+
+
+    /* =========================
+       QUIZ HISTORY
+    ========================= */
+
+    let quizHistory = [];
+
+    try {
+
+        quizHistory =
+            JSON.parse(
+                localStorage.getItem(
+                    "famousFaceQuizHistory"
+                )
+            ) || [];
+
+    } catch (error) {
+
+        console.error(
+            "Could not read quiz history:",
+            error
+        );
+
+    }
+
+
+    /* =========================
+       BASIC STATISTICS
+    ========================= */
+
+    const totalQuizzes =
+        quizHistory.length;
+
+    const percentages =
+        quizHistory
+            .map(quiz => Number(quiz.percentage))
+            .filter(Number.isFinite);
+
+    const bestScore =
+        percentages.length
+            ? Math.max(...percentages)
+            : 0;
+
+    const averageScore =
+        percentages.length
+            ? Math.round(
+                percentages.reduce(
+                    (sum, value) => sum + value,
+                    0
+                ) / percentages.length
+            )
+            : 0;
+
+
+    document.getElementById(
+        "profile-quizzes"
+    ).textContent = totalQuizzes;
+
+    document.getElementById(
+        "profile-best"
+    ).textContent = `${bestScore}%`;
+
+    document.getElementById(
+        "profile-average"
+    ).textContent = `${averageScore}%`;
+
+
+    /* =========================
+       CATEGORY STATISTICS
+    ========================= */
+
+    const categories = [
+        "music",
+        "movies",
+        "sports",
+        "art",
+        "history"
+    ];
+
+    categories.forEach(function (category) {
+
+        const categoryResults =
+            quizHistory.filter(
+                quiz =>
+                    quiz.category === category
+            );
+
+        const scores =
+            categoryResults
+                .map(
+                    quiz =>
+                        Number(quiz.percentage)
+                )
+                .filter(
+                    Number.isFinite
+                );
+
+        const best =
+            scores.length
+                ? Math.max(...scores)
+                : 0;
+
+        const element =
+            document.getElementById(
+                `profile-${category}`
+            );
+
+        if (element) {
+
+            element.textContent =
+                `${categoryResults.length} plays • Best: ${best}%`;
+
+        }
+
+    });
+
+
+    /* =========================
+       DAILY STREAK
+    ========================= */
+
+    const dailyHistory =
+        quizHistory.filter(
+            quiz =>
+                quiz.dailyChallenge === true
+        );
+
+    function calculateDailyStreak(history) {
+
+        if (!history.length) return 0;
+
+        const dates = [
+            ...new Set(
+                history
+                    .map(
+                        quiz => quiz.date
+                    )
+                    .filter(Boolean)
+            )
+        ].sort().reverse();
+
+        if (!dates.length) return 0;
+
+        const today =
+            new Date()
+                .toISOString()
+                .split("T")[0];
+
+        if (dates[0] !== today) return 0;
+
+        let streak = 0;
+
+        for (
+            let i = 0;
+            i < dates.length;
+            i++
+        ) {
+
+            const expectedDate =
+                new Date();
+
+            expectedDate.setDate(
+                expectedDate.getDate() - i
+            );
+
+            const expected =
+                expectedDate
+                    .toISOString()
+                    .split("T")[0];
+
+            if (dates[i] === expected) {
+
+                streak++;
+
+            } else {
+
+                break;
+
+            }
+
+        }
+
+        return streak;
+
+    }
+
+    const dailyStreak =
+        calculateDailyStreak(
+            dailyHistory
+        );
+
+    document.getElementById(
+        "profile-streak"
+    ).textContent =
+        `${dailyStreak} days`;
+
+
+    /* =========================
+       RECENT QUIZZES
+    ========================= */
+
+    const recentContainer =
+        document.getElementById(
+            "recent-quizzes"
+        );
+
+    if (quizHistory.length > 0) {
+
+        recentContainer.innerHTML = "";
+
+        const recent =
+            [...quizHistory]
+                .reverse()
+                .slice(0, 5);
+
+        recent.forEach(function (quiz) {
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "leaderboard-row";
+
+            row.innerHTML = `
+                <span>
+                    ${quiz.category || "Quiz"}
+                </span>
+
+                <span>
+                    ${quiz.score || 0}/${quiz.total || 0}
+                </span>
+
+                <strong>
+                    ${quiz.percentage || 0}%
+                </strong>
+            `;
+
+            recentContainer.appendChild(row);
+
+        });
+
+    }
+
+
+    /* =========================
+       ACHIEVEMENTS
+    ========================= */
+
+    const achievementsContainer =
+        document.getElementById(
+            "profile-achievements"
+        );
+
+    let unlockedAchievements = [];
+
+    try {
+
+        unlockedAchievements =
+            JSON.parse(
+                localStorage.getItem(
+                    "famousFaceUnlockedAchievements"
+                )
+            ) || [];
+
+    } catch (error) {
+
+        unlockedAchievements = [];
+
+    }
+
+
+    const achievements = [
+
+        {
+            icon: "🌟",
+            name: "First Quiz",
+            description:
+                "Complete your first quiz."
+        },
+
+        {
+            icon: "🔥",
+            name: "Quiz Master",
+            description:
+                "Complete 5 quizzes."
+        },
+
+        {
+            icon: "🏆",
+            name: "Perfect Score",
+            description:
+                "Score 100% on a quiz."
+        },
+
+        {
+            icon: "🎵",
+            name: "Music Fan",
+            description:
+                "Complete 3 Music quizzes."
+        },
+
+        {
+            icon: "🎬",
+            name: "Movie Buff",
+            description:
+                "Complete 3 Movies quizzes."
+        },
+
+        {
+            icon: "⚽",
+            name: "Sports Expert",
+            description:
+                "Complete 3 Sports quizzes."
+        },
+
+        {
+            icon: "🎨",
+            name: "Art Lover",
+            description:
+                "Complete 3 Art quizzes."
+        },
+
+        {
+            icon: "🌍",
+            name: "History Buff",
+            description:
+                "Complete 3 History quizzes."
+        },
+
+        {
+            icon: "🔥",
+            name: "Daily Warrior",
+            description:
+                "Complete 7 Daily Challenges."
+        },
+
+        {
+            icon: "🔥",
+            name: "3-Day Streak",
+            description:
+                "Complete Daily Challenges for 3 consecutive days."
+        },
+
+        {
+            icon: "🔥",
+            name: "7-Day Streak",
+            description:
+                "Complete Daily Challenges for 7 consecutive days."
+        }
+
+    ];
+
+
+    achievementsContainer.innerHTML = "";
+
+    achievements.forEach(function (achievement) {
+
+        const unlocked =
+            unlockedAchievements.includes(
+                achievement.name
+            );
+
+        const card =
+            document.createElement("div");
+
+        card.className =
+            unlocked
+                ? "achievement-card unlocked"
+                : "achievement-card locked";
+
+        card.innerHTML = `
+            <div class="achievement-icon">
+                ${achievement.icon}
+            </div>
+
+            <h3>
+                ${achievement.name}
+            </h3>
+
+            <p>
+                ${achievement.description}
+            </p>
+
+            <strong>
+                ${
+                    unlocked
+                        ? "✅ Unlocked"
+                        : "🔒 Locked"
+                }
+            </strong>
+        `;
+
+        achievementsContainer.appendChild(card);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
