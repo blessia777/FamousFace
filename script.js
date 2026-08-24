@@ -352,8 +352,13 @@ const quizData = {
 const dailyChallengeData = {
 
     rap: [
+
+        // ==============================
+        // RAPPERS & STAGE NAMES
+        // ==============================
+
         {
-            question: "Which rapper is known by the stage name Eminem?",
+            question: "What is Eminem's birth name?",
             answers: [
                 "Marshall Mathers",
                 "Calvin Broadus",
@@ -364,73 +369,144 @@ const dailyChallengeData = {
         },
 
         {
-            question: "Which rapper released the album To Pimp a Butterfly?",
-            answers: [
-                "Kendrick Lamar",
-                "Drake",
-                "J. Cole",
-                "Nas"
-            ],
-            correct: "Kendrick Lamar"
-        },
-
-        {
-            question: "Which rapper is widely known as Jay-Z?",
-            answers: [
-                "Shawn Carter",
-                "Kanye West",
-                "Curtis Jackson",
-                "Andre Young"
-            ],
-            correct: "Shawn Carter"
-        },
-
-        {
-            question: "Which rapper founded the record label Aftermath Entertainment?",
-            answers: [
-                "Dr. Dre",
-                "Snoop Dogg",
-                "Ice Cube",
-                "50 Cent"
-            ],
-            correct: "Dr. Dre"
-        },
-
-        {
-            question: "Which rapper is associated with the album Illmatic?",
-            answers: [
-                "Nas",
-                "Eminem",
-                "Lil Wayne",
-                "Future"
-            ],
-            correct: "Nas"
-        },
-
-        {
-            question: "Which artist released the album The Miseducation of Lauryn Hill?",
-            answers: [
-                "Lauryn Hill",
-                "Nicki Minaj",
-                "Missy Elliott",
-                "Cardi B"
-            ],
-            correct: "Lauryn Hill"
-        },
-
-        {
-            question: "Which rapper is known as Snoop Dogg?",
+            question: "What is Snoop Dogg's birth name?",
             answers: [
                 "Calvin Broadus",
-                "Marshall Mathers",
-                "Shawn Carter",
-                "Travis Scott"
+                "Andre Young",
+                "Curtis Jackson",
+                "Shawn Carter"
             ],
             correct: "Calvin Broadus"
         },
 
         {
-            question: "Which rapper released the album 2014 Forest Hills Drive?",
+            question: "What is Jay-Z's birth name?",
+            answers: [
+                "Shawn Carter",
+                "Kanye West",
+                "Nasir Jones",
+                "Rakim Mayers"
+            ],
+            correct: "Shawn Carter"
+        },
+
+        {
+            question: "Which artist is known by the stage name Drake?",
+            answers: [
+                "Aubrey Graham",
+                "Kendrick Duckworth",
+                "Marshall Mathers",
+                "Travis Scott"
+            ],
+            correct: "Aubrey Graham"
+        },
+
+        {
+            question: "Which rapper is known as Ice Cube?",
+            answers: [
+                "O'Shea Jackson",
+                "Andre Young",
+                "Eric Wright",
+                "Calvin Broadus"
+            ],
+            correct: "O'Shea Jackson"
+        },
+
+        {
+            question: "Which rapper is known as 50 Cent?",
+            answers: [
+                "Curtis Jackson",
+                "Shawn Carter",
+                "Rakim Mayers",
+                "Nasir Jones"
+            ],
+            correct: "Curtis Jackson"
+        },
+
+        {
+            question: "Which rapper is known professionally as Nas?",
+            answers: [
+                "Nasir Jones",
+                "Shawn Carter",
+                "Kendrick Lamar",
+                "Lonnie Rashid Lynn"
+            ],
+            correct: "Nasir Jones"
+        },
+
+        {
+            question: "Which artist is known as Queen Latifah?",
+            answers: [
+                "Dana Owens",
+                "Lauryn Hill",
+                "Missy Elliott",
+                "Nicki Minaj"
+            ],
+            correct: "Dana Owens"
+        },
+
+        {
+            question: "Which rapper is known professionally as LL Cool J?",
+            answers: [
+                "James Todd Smith",
+                "Will Smith",
+                "Joseph Simmons",
+                "Rakim Allah"
+            ],
+            correct: "James Todd Smith"
+        },
+
+        {
+            question: "Which artist is known professionally as Common?",
+            answers: [
+                "Lonnie Rashid Lynn",
+                "Kendrick Lamar Duckworth",
+                "Tupac Shakur",
+                "Clifford Smith"
+            ],
+            correct: "Lonnie Rashid Lynn"
+        },
+
+
+        // ==============================
+        // ALBUMS
+        // ==============================
+
+        {
+            question: "Which rapper released the album Illmatic?",
+            answers: [
+                "Nas",
+                "Jay-Z",
+                "Eminem",
+                "Drake"
+            ],
+            correct: "Nas"
+        },
+
+        {
+            question: "Who released To Pimp a Butterfly?",
+            answers: [
+                "Kendrick Lamar",
+                "J. Cole",
+                "Drake",
+                "Kanye West"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+        {
+            question: "Which rapper released The College Dropout?",
+            answers: [
+                "Kanye West",
+                "Lil Wayne",
+                "Nas",
+                "Jay-Z"
+            ],
+            correct: "Kanye West"
+        },
+
+        {
+            question: "Which artist released 2014 Forest Hills Drive?",
             answers: [
                 "J. Cole",
                 "Kendrick Lamar",
@@ -441,25 +517,429 @@ const dailyChallengeData = {
         },
 
         {
-            question: "Which rapper is known for the album The College Dropout?",
+            question: "Which rapper released The Marshall Mathers LP?",
             answers: [
-                "Kanye West",
-                "Jay-Z",
-                "Lil Wayne",
-                "Nas"
+                "Eminem",
+                "50 Cent",
+                "Dr. Dre",
+                "Snoop Dogg"
             ],
-            correct: "Kanye West"
+            correct: "Eminem"
         },
 
         {
-            question: "Which rapper is known by the real name Aubrey Graham?",
+            question: "Which artist released The Miseducation of Lauryn Hill?",
+            answers: [
+                "Lauryn Hill",
+                "Missy Elliott",
+                "Queen Latifah",
+                "Nicki Minaj"
+            ],
+            correct: "Lauryn Hill"
+        },
+
+        {
+            question: "Which group released Straight Outta Compton?",
+            answers: [
+                "N.W.A",
+                "Wu-Tang Clan",
+                "Public Enemy",
+                "Run-D.M.C."
+            ],
+            correct: "N.W.A"
+        },
+
+        {
+            question: "Which rapper released DAMN.?",
+            answers: [
+                "Kendrick Lamar",
+                "J. Cole",
+                "Drake",
+                "Future"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+
+        // ==============================
+        // SONGS
+        // ==============================
+
+        {
+            question: "Which artist released the song 'Lose Yourself'?",
+            answers: [
+                "Eminem",
+                "50 Cent",
+                "Dr. Dre",
+                "Nas"
+            ],
+            correct: "Eminem"
+        },
+
+        {
+            question: "Which group recorded 'Walk This Way' with Aerosmith?",
+            answers: [
+                "Run-D.M.C.",
+                "Public Enemy",
+                "Beastie Boys",
+                "N.W.A"
+            ],
+            correct: "Run-D.M.C."
+        },
+
+        {
+            question: "Which rapper is associated with 'California Love' alongside Dr. Dre?",
+            answers: [
+                "Tupac Shakur",
+                "Snoop Dogg",
+                "Ice Cube",
+                "Nas"
+            ],
+            correct: "Tupac Shakur"
+        },
+
+        {
+            question: "Which rapper released 'Not Like Us'?",
+            answers: [
+                "Kendrick Lamar",
+                "Drake",
+                "J. Cole",
+                "Future"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+        {
+            question: "Which group is associated with 'The Message'?",
+            answers: [
+                "Grandmaster Flash and the Furious Five",
+                "Run-D.M.C.",
+                "Public Enemy",
+                "N.W.A"
+            ],
+            correct: "Grandmaster Flash and the Furious Five"
+        },
+
+        {
+            question: "Which rapper released 'HUMBLE.'?",
+            answers: [
+                "Kendrick Lamar",
+                "Kanye West",
+                "J. Cole",
+                "Travis Scott"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+        {
+            question: "Which rapper released 'In Da Club'?",
+            answers: [
+                "50 Cent",
+                "Dr. Dre",
+                "Snoop Dogg",
+                "Eminem"
+            ],
+            correct: "50 Cent"
+        },
+
+        {
+            question: "Which rapper is associated with the song 'Dear Mama'?",
+            answers: [
+                "Tupac Shakur",
+                "Nas",
+                "Ice Cube",
+                "Jay-Z"
+            ],
+            correct: "Tupac Shakur"
+        },
+
+
+        // ==============================
+        // AWARDS & ACHIEVEMENTS
+        // ==============================
+
+        {
+            question: "Which artist became the first hip-hop artist to win the Pulitzer Prize for Music?",
+            answers: [
+                "Kendrick Lamar",
+                "Jay-Z",
+                "Eminem",
+                "Kanye West"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+        {
+            question: "Which rapper won the 2025 Grammy for Best Rap Performance with 'Not Like Us'?",
+            answers: [
+                "Kendrick Lamar",
+                "Drake",
+                "Eminem",
+                "J. Cole"
+            ],
+            correct: "Kendrick Lamar"
+        },
+
+        {
+            question: "Which group became the first rap group inducted into the Rock & Roll Hall of Fame?",
+            answers: [
+                "Grandmaster Flash and the Furious Five",
+                "Run-D.M.C.",
+                "Public Enemy",
+                "Beastie Boys"
+            ],
+            correct: "Grandmaster Flash and the Furious Five"
+        },
+
+        {
+            question: "Which group was inducted into the Rock & Roll Hall of Fame in 2009?",
+            answers: [
+                "Run-D.M.C.",
+                "Public Enemy",
+                "N.W.A",
+                "Beastie Boys"
+            ],
+            correct: "Run-D.M.C."
+        },
+
+        {
+            question: "Which hip-hop group was inducted into the Rock & Roll Hall of Fame in 2013?",
+            answers: [
+                "Public Enemy",
+                "Run-D.M.C.",
+                "N.W.A",
+                "Wu-Tang Clan"
+            ],
+            correct: "Public Enemy"
+        },
+
+        {
+            question: "Which artist was inducted into the Rock & Roll Hall of Fame in 2023 as a solo performer?",
+            answers: [
+                "Missy Elliott",
+                "Nicki Minaj",
+                "Cardi B",
+                "Lil Kim"
+            ],
+            correct: "Missy Elliott"
+        },
+
+
+        // ==============================
+        // COLLABORATIONS
+        // ==============================
+
+        {
+            question: "Which group collaborated with Aerosmith on 'Walk This Way'?",
+            answers: [
+                "Run-D.M.C.",
+                "Public Enemy",
+                "N.W.A",
+                "Beastie Boys"
+            ],
+            correct: "Run-D.M.C."
+        },
+
+        {
+            question: "Who collaborated with Dr. Dre on 'California Love'?",
+            answers: [
+                "Tupac Shakur",
+                "Ice Cube",
+                "Eminem",
+                "50 Cent"
+            ],
+            correct: "Tupac Shakur"
+        },
+
+        {
+            question: "Which two artists recorded 'Empire State of Mind'?",
+            answers: [
+                "Jay-Z and Alicia Keys",
+                "Drake and Rihanna",
+                "Kanye West and Rihanna",
+                "Nas and Lauryn Hill"
+            ],
+            correct: "Jay-Z and Alicia Keys"
+        },
+
+        {
+            question: "Which artists collaborated on 'Like That'?",
+            answers: [
+                "Future, Metro Boomin and Kendrick Lamar",
+                "Drake, Future and J. Cole",
+                "Kanye West, Jay-Z and Nas",
+                "50 Cent, Eminem and Dr. Dre"
+            ],
+            correct: "Future, Metro Boomin and Kendrick Lamar"
+        },
+
+        {
+            question: "Which duo formed the group Silk Sonic?",
+            answers: [
+                "Bruno Mars and Anderson .Paak",
+                "Drake and Future",
+                "Jay-Z and Kanye West",
+                "Kendrick Lamar and J. Cole"
+            ],
+            correct: "Bruno Mars and Anderson .Paak"
+        },
+
+        {
+            question: "Which artist collaborated with Kendrick Lamar on the song 'luther'?",
+            answers: [
+                "SZA",
+                "Rihanna",
+                "Alicia Keys",
+                "Beyoncé"
+            ],
+            correct: "SZA"
+        },
+
+
+        // ==============================
+        // HIP-HOP HISTORY
+        // ==============================
+
+        {
+            question: "Which DJ is widely credited with helping lay the foundation for hip-hop culture?",
+            answers: [
+                "DJ Kool Herc",
+                "DJ Jazzy Jeff",
+                "DJ Premier",
+                "DJ Khaled"
+            ],
+            correct: "DJ Kool Herc"
+        },
+
+        {
+            question: "Which group is famous for the song 'The Message'?",
+            answers: [
+                "Grandmaster Flash and the Furious Five",
+                "Run-D.M.C.",
+                "N.W.A",
+                "Public Enemy"
+            ],
+            correct: "Grandmaster Flash and the Furious Five"
+        },
+
+        {
+            question: "Which group helped bring rap-rock to a huge mainstream audience through 'Walk This Way'?",
+            answers: [
+                "Run-D.M.C.",
+                "N.W.A",
+                "Public Enemy",
+                "Wu-Tang Clan"
+            ],
+            correct: "Run-D.M.C."
+        },
+
+        {
+            question: "Which hip-hop group was known for combining political messages with rap?",
+            answers: [
+                "Public Enemy",
+                "Run-D.M.C.",
+                "Beastie Boys",
+                "N.W.A"
+            ],
+            correct: "Public Enemy"
+        },
+
+        {
+            question: "Which record label was co-founded by Rick Rubin and Russell Simmons?",
+            answers: [
+                "Def Jam Recordings",
+                "Death Row Records",
+                "Aftermath Entertainment",
+                "Roc-A-Fella Records"
+            ],
+            correct: "Def Jam Recordings"
+        },
+
+        {
+            question: "Which group was one of the pioneering acts associated with the early development of hip-hop?",
+            answers: [
+                "Sugarhill Gang",
+                "Coldplay",
+                "ABBA",
+                "Maroon 5"
+            ],
+            correct: "Sugarhill Gang"
+        },
+
+
+        // ==============================
+        // INTERNATIONAL RAP
+        // ==============================
+
+        {
+            question: "Which Canadian rapper is known professionally as Drake?",
             answers: [
                 "Drake",
-                "Future",
-                "Travis Scott",
-                "Post Malone"
+                "Nas",
+                "Kendrick Lamar",
+                "J. Cole"
             ],
             correct: "Drake"
+        },
+
+        {
+            question: "Which British rapper released the album Psychodrama?",
+            answers: [
+                "Dave",
+                "Stormzy",
+                "Skepta",
+                "Giggs"
+            ],
+            correct: "Dave"
+        },
+
+        {
+            question: "Which British rapper is known professionally as Stormzy?",
+            answers: [
+                "Michael Omari",
+                "David Omoregie",
+                "Joseph Junior Adenuga",
+                "Nathaniel Thompson"
+            ],
+            correct: "Michael Omari"
+        },
+
+
+        // ==============================
+        // FAMOUS RAP FACTS
+        // ==============================
+
+       {
+    question: "Which group was formed by Joseph Simmons, Darryl McDaniels and Jason Mizell?",
+    answers: [
+        "Run-D.M.C.",
+        "Public Enemy",
+        "N.W.A",
+        "Beastie Boys"
+    ],
+    correct: "Run-D.M.C."
+},
+
+        {
+            question: "Which rapper founded Aftermath Entertainment?",
+            answers: [
+                "Dr. Dre",
+                "Eminem",
+                "Snoop Dogg",
+                "Ice Cube"
+            ],
+            correct: "Dr. Dre"
+        },
+
+        {
+            question: "Which rapper was a member of N.W.A?",
+            answers: [
+                "Ice Cube",
+                "Jay-Z",
+                "Nas",
+                "J. Cole"
+            ],
+            correct: "Ice Cube"
         }
     ]
 
