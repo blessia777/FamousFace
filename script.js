@@ -1689,34 +1689,54 @@ function seededShuffle(array, seed) {
 
     return result;
 }
-
-
 // Get Daily Challenge questions
 function getDailyChallengeQuestions() {
 
-    const dailyPool =
-        dailyChallengeData.rap || [];
-
-    if (dailyPool.length < 5) {
-
-        console.error(
-            "Not enough Daily Challenge questions."
-        );
-
-        return dailyPool;
-    }
+    // Daily Challenge categories
+    const categories = [
+        "rap",
+        "movies",
+        "music",
+        "sports",
+        "history"
+    ];
 
     const seed = getDailySeed();
 
-    const shuffled =
-        seededShuffle(
-            dailyPool,
-            seed
-        );
+    let dailyQuestions = [];
 
-    return shuffled.slice(0, 5);
+    // Select 1 question from each category
+    categories.forEach((categoryName, index) => {
+
+        const categoryQuestions =
+            quizData[categoryName] || [];
+
+        if (categoryQuestions.length === 0) {
+            console.warn(
+                `No questions found for category: ${categoryName}`
+            );
+            return;
+        }
+
+        // Shuffle questions using today's seed
+        const shuffled =
+            seededShuffle(
+                categoryQuestions,
+                seed + index
+            );
+
+        // Take exactly 1 question
+        dailyQuestions.push(shuffled[0]);
+    });
+
+    // Shuffle the final 5 questions
+    return seededShuffle(
+        dailyQuestions,
+        seed + 100
+    );
 }
-        
+
+
 
 // Get questions
 const questions = isDailyChallenge
