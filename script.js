@@ -1716,19 +1716,7 @@ function getDailyChallengeQuestions() {
 
     return shuffled.slice(0, 5);
 }
-        // Take 2 questions from each category
-        dailyQuestions.push(
-            ...shuffled.slice(0, 2)
-        );
-    });
-
-    // Shuffle the final 10 questions
-    return seededShuffle(
-        dailyQuestions,
-        seed + 100
-    );
-}
-
+        
 
 // Get questions
 const questions = isDailyChallenge
