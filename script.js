@@ -1630,6 +1630,1722 @@ moviesDaily: [
     ],
     correct: "Spirited Away"
 }
+],
+    music: [
+
+    // ==============================
+    // FAMOUS MUSIC ARTISTS
+    // ==============================
+
+    {
+        question: "Who is known as the King of Pop?",
+        answers: [
+            "Michael Jackson",
+            "Elvis Presley",
+            "Prince",
+            "Bruno Mars"
+        ],
+        correct: "Michael Jackson"
+    },
+
+    {
+        question: "Who is known as the Queen of Pop?",
+        answers: [
+            "Madonna",
+            "Beyoncé",
+            "Whitney Houston",
+            "Mariah Carey"
+        ],
+        correct: "Madonna"
+    },
+
+    {
+        question: "Which singer released the album 21?",
+        answers: [
+            "Adele",
+            "Taylor Swift",
+            "Rihanna",
+            "Lady Gaga"
+        ],
+        correct: "Adele"
+    },
+
+    {
+        question: "Which singer is famous for the song Purple Rain?",
+        answers: [
+            "Prince",
+            "Michael Jackson",
+            "David Bowie",
+            "Elton John"
+        ],
+        correct: "Prince"
+    },
+
+    {
+        question: "Which singer is known for the hit song Rolling in the Deep?",
+        answers: [
+            "Adele",
+            "Rihanna",
+            "Sia",
+            "Pink"
+        ],
+        correct: "Adele"
+    },
+
+    {
+        question: "Which singer released the album Thriller?",
+        answers: [
+            "Michael Jackson",
+            "Prince",
+            "Stevie Wonder",
+            "Lionel Richie"
+        ],
+        correct: "Michael Jackson"
+    },
+
+    {
+        question: "Which artist is famous for the song Like a Prayer?",
+        answers: [
+            "Madonna",
+            "Cher",
+            "Celine Dion",
+            "Whitney Houston"
+        ],
+        correct: "Madonna"
+    },
+
+    {
+        question: "Which singer is known for the song Halo?",
+        answers: [
+            "Beyoncé",
+            "Rihanna",
+            "Adele",
+            "Jennifer Lopez"
+        ],
+        correct: "Beyoncé"
+    },
+
+    {
+        question: "Which singer released the album Future Nostalgia?",
+        answers: [
+            "Dua Lipa",
+            "Ariana Grande",
+            "Selena Gomez",
+            "Billie Eilish"
+        ],
+        correct: "Dua Lipa"
+    },
+
+    {
+        question: "Which singer is known for the song Bad Guy?",
+        answers: [
+            "Billie Eilish",
+            "Olivia Rodrigo",
+            "Dua Lipa",
+            "Sia"
+        ],
+        correct: "Billie Eilish"
+    },
+
+    // ==============================
+    // ALBUMS
+    // ==============================
+
+    {
+        question: "Which artist released the album Abbey Road?",
+        answers: [
+            "The Beatles",
+            "The Rolling Stones",
+            "Queen",
+            "Pink Floyd"
+        ],
+        correct: "The Beatles"
+    },
+
+    {
+        question: "Which band released The Dark Side of the Moon?",
+        answers: [
+            "Pink Floyd",
+            "Queen",
+            "Led Zeppelin",
+            "The Beatles"
+        ],
+        correct: "Pink Floyd"
+    },
+
+    {
+        question: "Which artist released Born in the U.S.A.?",
+        answers: [
+            "Bruce Springsteen",
+            "Bob Dylan",
+            "Elton John",
+            "Billy Joel"
+        ],
+        correct: "Bruce Springsteen"
+    },
+
+    {
+        question: "Which artist released the album Lemonade?",
+        answers: [
+            "Beyoncé",
+            "Rihanna",
+            "Adele",
+            "Nicki Minaj"
+        ],
+        correct: "Beyoncé"
+    },
+
+    {
+        question: "Which artist released the album 1989?",
+        answers: [
+            "Taylor Swift",
+            "Ariana Grande",
+            "Katy Perry",
+            "Selena Gomez"
+        ],
+        correct: "Taylor Swift"
+    },
+
+    {
+        question: "Which band released the album A Night at the Opera?",
+        answers: [
+            "Queen",
+            "The Beatles",
+            "ABBA",
+            "U2"
+        ],
+        correct: "Queen"
+    },
+
+    {
+        question: "Which artist released the album Back to Black?",
+        answers: [
+            "Amy Winehouse",
+            "Adele",
+            "Duffy",
+            "Sia"
+        ],
+        correct: "Amy Winehouse"
+    },
+
+    {
+        question: "Which artist released the album Harry's House?",
+        answers: [
+            "Harry Styles",
+            "Ed Sheeran",
+            "Shawn Mendes",
+            "Justin Bieber"
+        ],
+        correct: "Harry Styles"
+    },
+
+    {
+        question: "Which singer released the album Sour?",
+        answers: [
+            "Olivia Rodrigo",
+            "Billie Eilish",
+            "Dua Lipa",
+            "Camila Cabello"
+        ],
+        correct: "Olivia Rodrigo"
+    },
+
+    {
+        question: "Which artist released the album Divide?",
+        answers: [
+            "Ed Sheeran",
+            "Justin Bieber",
+            "Sam Smith",
+            "Bruno Mars"
+        ],
+        correct: "Ed Sheeran"
+    },
+
+    // ==============================
+    // FAMOUS SONGS
+    // ==============================
+
+    {
+        question: "Which band recorded Bohemian Rhapsody?",
+        answers: [
+            "Queen",
+            "ABBA",
+            "The Beatles",
+            "Aerosmith"
+        ],
+        correct: "Queen"
+    },
+
+    {
+        question: "Which artist released the song Imagine?",
+        answers: [
+            "John Lennon",
+            "Paul McCartney",
+            "Elton John",
+            "David Bowie"
+        ],
+        correct: "John Lennon"
+    },
+
+    {
+        question: "Which singer released Firework?",
+        answers: [
+            "Katy Perry",
+            "Lady Gaga",
+            "Rihanna",
+            "Pink"
+        ],
+        correct: "Katy Perry"
+    },
+
+    {
+        question: "Which artist released the song Shape of You?",
+        answers: [
+            "Ed Sheeran",
+            "Justin Bieber",
+            "Bruno Mars",
+            "Shawn Mendes"
+        ],
+        correct: "Ed Sheeran"
+    },
+
+    {
+        question: "Which singer released Single Ladies?",
+        answers: [
+            "Beyoncé",
+            "Rihanna",
+            "Nicki Minaj",
+            "Jennifer Lopez"
+        ],
+        correct: "Beyoncé"
+    },
+
+    {
+        question: "Which artist released Uptown Funk with Mark Ronson?",
+        answers: [
+            "Bruno Mars",
+            "The Weeknd",
+            "Justin Timberlake",
+            "Pharrell Williams"
+        ],
+        correct: "Bruno Mars"
+    },
+
+    {
+        question: "Which singer released Someone Like You?",
+        answers: [
+            "Adele",
+            "Taylor Swift",
+            "Sia",
+            "Rihanna"
+        ],
+        correct: "Adele"
+    },
+
+    {
+        question: "Which band recorded We Will Rock You?",
+        answers: [
+            "Queen",
+            "U2",
+            "The Beatles",
+            "Bon Jovi"
+        ],
+        correct: "Queen"
+    },
+
+    {
+        question: "Which artist released Blinding Lights?",
+        answers: [
+            "The Weeknd",
+            "Drake",
+            "Post Malone",
+            "Bruno Mars"
+        ],
+        correct: "The Weeknd"
+    },
+
+    {
+        question: "Which singer released Wrecking Ball?",
+        answers: [
+            "Miley Cyrus",
+            "Selena Gomez",
+            "Demi Lovato",
+            "Ariana Grande"
+        ],
+        correct: "Miley Cyrus"
+    },
+
+    // ==============================
+    // MUSIC HISTORY
+    // ==============================
+
+    {
+        question: "Which British band was formed by John Lennon, Paul McCartney, George Harrison and Ringo Starr?",
+        answers: [
+            "The Beatles",
+            "Queen",
+            "The Rolling Stones",
+            "Oasis"
+        ],
+        correct: "The Beatles"
+    },
+
+    {
+        question: "Which musician is famous for the song Johnny B. Goode?",
+        answers: [
+            "Chuck Berry",
+            "Little Richard",
+            "Elvis Presley",
+            "Ray Charles"
+        ],
+        correct: "Chuck Berry"
+    },
+
+    {
+        question: "Which singer was known as the King of Rock and Roll?",
+        answers: [
+            "Elvis Presley",
+            "Chuck Berry",
+            "Johnny Cash",
+            "Frank Sinatra"
+        ],
+        correct: "Elvis Presley"
+    },
+
+    {
+        question: "Which Jamaican musician helped popularize reggae worldwide?",
+        answers: [
+            "Bob Marley",
+            "Peter Tosh",
+            "Jimmy Cliff",
+            "Sean Paul"
+        ],
+        correct: "Bob Marley"
+    },
+
+    {
+        question: "Which singer was famous for the song Respect?",
+        answers: [
+            "Aretha Franklin",
+            "Tina Turner",
+            "Diana Ross",
+            "Whitney Houston"
+        ],
+        correct: "Aretha Franklin"
+    },
+
+    {
+        question: "Which musician was known as the Godfather of Soul?",
+        answers: [
+            "James Brown",
+            "Ray Charles",
+            "Marvin Gaye",
+            "Otis Redding"
+        ],
+        correct: "James Brown"
+    },
+
+    {
+        question: "Which genre originated in Jamaica in the late 1960s?",
+        answers: [
+            "Reggae",
+            "Disco",
+            "Grunge",
+            "Techno"
+        ],
+        correct: "Reggae"
+    },
+
+    {
+        question: "Which genre is strongly associated with New Orleans?",
+        answers: [
+            "Jazz",
+            "Heavy metal",
+            "Reggae",
+            "House"
+        ],
+        correct: "Jazz"
+    },
+
+    {
+        question: "Which musician was famous for playing the electric guitar with his teeth?",
+        answers: [
+            "Jimi Hendrix",
+            "Eric Clapton",
+            "Jimmy Page",
+            "Slash"
+        ],
+        correct: "Jimi Hendrix"
+    },
+
+    {
+        question: "Which band is famous for the song Hotel California?",
+        answers: [
+            "Eagles",
+            "Fleetwood Mac",
+            "Journey",
+            "Bon Jovi"
+        ],
+        correct: "Eagles"
+    },
+
+    // ==============================
+    // MUSIC AWARDS & ACHIEVEMENTS
+    // ==============================
+
+    {
+        question: "Which music awards are presented annually by the Recording Academy?",
+        answers: [
+            "Grammy Awards",
+            "Brit Awards",
+            "Billboard Awards",
+            "American Music Awards"
+        ],
+        correct: "Grammy Awards"
+    },
+
+    {
+        question: "Which singer has won multiple Grammy Awards and is known for the album Fearless?",
+        answers: [
+            "Taylor Swift",
+            "Katy Perry",
+            "Selena Gomez",
+            "Demi Lovato"
+        ],
+        correct: "Taylor Swift"
+    },
+
+    {
+        question: "Which artist won the Grammy for Album of the Year with 25?",
+        answers: [
+            "Adele",
+            "Beyoncé",
+            "Taylor Swift",
+            "Lady Gaga"
+        ],
+        correct: "Adele"
+    },
+
+    {
+        question: "Which artist became famous as a member of Destiny's Child?",
+        answers: [
+            "Beyoncé",
+            "Rihanna",
+            "Adele",
+            "Lady Gaga"
+        ],
+        correct: "Beyoncé"
+    },
+
+    {
+        question: "Which band represented Ireland in the Eurovision Song Contest and became internationally famous?",
+        answers: [
+            "U2",
+            "Coldplay",
+            "Oasis",
+            "The Killers"
+        ],
+        correct: "U2"
+    },
+
+    // ==============================
+    // INTERNATIONAL MUSIC
+    // ==============================
+
+    {
+        question: "Which Colombian singer is known for the song Hips Don't Lie?",
+        answers: [
+            "Shakira",
+            "Karol G",
+            "Jennifer Lopez",
+            "Rihanna"
+        ],
+        correct: "Shakira"
+    },
+
+    {
+        question: "Which Puerto Rican artist is one of the world's most famous Latin music stars?",
+        answers: [
+            "Bad Bunny",
+            "Drake",
+            "The Weeknd",
+            "Bruno Mars"
+        ],
+        correct: "Bad Bunny"
+    },
+
+    {
+        question: "Which Nigerian artist released the hit song Essence with Tems?",
+        answers: [
+            "Wizkid",
+            "Davido",
+            "Burna Boy",
+            "Rema"
+        ],
+        correct: "Wizkid"
+    },
+
+    {
+        question: "Which Nigerian artist is known professionally as Burna Boy?",
+        answers: [
+            "Damini Ogulu",
+            "Ayodeji Balogun",
+            "David Adeleke",
+            "Divine Ikubor"
+        ],
+        correct: "Damini Ogulu"
+    },
+
+    {
+        question: "Which South African group became internationally known for the song Jerusalema?",
+        answers: [
+            "Master KG and collaborators",
+            "Die Antwoord",
+            "Ladysmith Black Mambazo",
+            "Mafikizolo"
+        ],
+        correct: "Master KG and collaborators"
+    }
+
+],
+    sports: [
+
+    {
+        question: "Which country won the 2018 FIFA World Cup?",
+        answers: [
+            "France",
+            "Croatia",
+            "Brazil",
+            "Germany"
+        ],
+        correct: "France"
+    },
+
+    {
+        question: "How many players does one football team have on the field at the start of a match?",
+        answers: [
+            "11",
+            "10",
+            "12",
+            "9"
+        ],
+        correct: "11"
+    },
+
+    {
+        question: "Which country is famous for the football club FC Barcelona?",
+        answers: [
+            "Spain",
+            "Italy",
+            "France",
+            "Portugal"
+        ],
+        correct: "Spain"
+    },
+
+    {
+        question: "Which player is widely known as 'The King of Football'?",
+        answers: [
+            "Pelé",
+            "Diego Maradona",
+            "Cristiano Ronaldo",
+            "Lionel Messi"
+        ],
+        correct: "Pelé"
+    },
+
+    {
+        question: "Which country hosted the 2010 FIFA World Cup?",
+        answers: [
+            "South Africa",
+            "Brazil",
+            "Germany",
+            "Russia"
+        ],
+        correct: "South Africa"
+    },
+
+    {
+        question: "Which football club plays its home matches at Old Trafford?",
+        answers: [
+            "Manchester United",
+            "Liverpool",
+            "Chelsea",
+            "Arsenal"
+        ],
+        correct: "Manchester United"
+    },
+
+    {
+        question: "Which club is known as the 'Reds' and plays at Anfield?",
+        answers: [
+            "Liverpool",
+            "Manchester City",
+            "Arsenal",
+            "Tottenham Hotspur"
+        ],
+        correct: "Liverpool"
+    },
+
+    {
+        question: "Which country won the 2022 FIFA World Cup?",
+        answers: [
+            "Argentina",
+            "France",
+            "Brazil",
+            "Croatia"
+        ],
+        correct: "Argentina"
+    },
+
+    {
+        question: "Which footballer is famous for the 'Siuuu' celebration?",
+        answers: [
+            "Cristiano Ronaldo",
+            "Lionel Messi",
+            "Neymar",
+            "Kylian Mbappé"
+        ],
+        correct: "Cristiano Ronaldo"
+    },
+
+    {
+        question: "Which country has won the most FIFA World Cups?",
+        answers: [
+            "Brazil",
+            "Germany",
+            "Italy",
+            "Argentina"
+        ],
+        correct: "Brazil"
+    },
+
+    {
+        question: "Which club plays at the Santiago Bernabéu?",
+        answers: [
+            "Real Madrid",
+            "Barcelona",
+            "Atlético Madrid",
+            "Valencia"
+        ],
+        correct: "Real Madrid"
+    },
+
+    {
+        question: "Which football player is nicknamed 'La Pulga'?",
+        answers: [
+            "Lionel Messi",
+            "Luis Suárez",
+            "Neymar",
+            "Sergio Agüero"
+        ],
+        correct: "Lionel Messi"
+    },
+
+    {
+        question: "Which African country was the first to reach a FIFA World Cup semi-final?",
+        answers: [
+            "Morocco",
+            "Ghana",
+            "Senegal",
+            "Cameroon"
+        ],
+        correct: "Morocco"
+    },
+
+    {
+        question: "Which country won the 1998 FIFA World Cup?",
+        answers: [
+            "France",
+            "Brazil",
+            "Italy",
+            "Germany"
+        ],
+        correct: "France"
+    },
+
+    {
+        question: "Which football club is based in Munich?",
+        answers: [
+            "Bayern Munich",
+            "Borussia Dortmund",
+            "RB Leipzig",
+            "Bayer Leverkusen"
+        ],
+        correct: "Bayern Munich"
+    },
+
+    {
+        question: "Which player has won the most Ballon d'Or awards?",
+        answers: [
+            "Lionel Messi",
+            "Cristiano Ronaldo",
+            "Zinedine Zidane",
+            "Ronaldinho"
+        ],
+        correct: "Lionel Messi"
+    },
+
+    {
+        question: "Which country won the 2014 FIFA World Cup?",
+        answers: [
+            "Germany",
+            "Argentina",
+            "Brazil",
+            "Spain"
+        ],
+        correct: "Germany"
+    },
+
+    {
+        question: "Which football club is known as the Gunners?",
+        answers: [
+            "Arsenal",
+            "Chelsea",
+            "Liverpool",
+            "Tottenham Hotspur"
+        ],
+        correct: "Arsenal"
+    },
+
+    {
+        question: "Which country won the UEFA Euro 2020 tournament?",
+        answers: [
+            "Italy",
+            "England",
+            "France",
+            "Spain"
+        ],
+        correct: "Italy"
+    },
+
+    {
+        question: "Which stadium is the home of FC Barcelona?",
+        answers: [
+            "Camp Nou",
+            "Wembley Stadium",
+            "San Siro",
+            "Bernabéu"
+        ],
+        correct: "Camp Nou"
+    },
+
+    {
+        question: "How many points is a touchdown worth in American football before the extra point?",
+        answers: [
+            "6",
+            "7",
+            "3",
+            "5"
+        ],
+        correct: "6"
+    },
+
+    {
+        question: "Which team plays in the NBA?",
+        answers: [
+            "Los Angeles Lakers",
+            "New York Yankees",
+            "Dallas Cowboys",
+            "Boston Red Sox"
+        ],
+        correct: "Los Angeles Lakers"
+    },
+
+    {
+        question: "How many players from one team are on the court in basketball?",
+        answers: [
+            "5",
+            "6",
+            "7",
+            "4"
+        ],
+        correct: "5"
+    },
+
+    {
+        question: "Which basketball player is nicknamed 'King James'?",
+        answers: [
+            "LeBron James",
+            "Michael Jordan",
+            "Stephen Curry",
+            "Kobe Bryant"
+        ],
+        correct: "LeBron James"
+    },
+
+    {
+        question: "Which basketball team is associated with Michael Jordan's NBA career?",
+        answers: [
+            "Chicago Bulls",
+            "Los Angeles Lakers",
+            "Boston Celtics",
+            "Miami Heat"
+        ],
+        correct: "Chicago Bulls"
+    },
+
+    {
+        question: "Which NBA team plays at Madison Square Garden?",
+        answers: [
+            "New York Knicks",
+            "Brooklyn Nets",
+            "Boston Celtics",
+            "Chicago Bulls"
+        ],
+        correct: "New York Knicks"
+    },
+
+    {
+        question: "Which basketball player is famous for the 'Skyhook'?",
+        answers: [
+            "Kareem Abdul-Jabbar",
+            "Shaquille O'Neal",
+            "Magic Johnson",
+            "Larry Bird"
+        ],
+        correct: "Kareem Abdul-Jabbar"
+    },
+
+    {
+        question: "Which country won the first Olympic basketball gold medal in the modern era?",
+        answers: [
+            "United States",
+            "Brazil",
+            "Spain",
+            "France"
+        ],
+        correct: "United States"
+    },
+
+    {
+        question: "In tennis, what is a score of zero called?",
+        answers: [
+            "Love",
+            "Nil",
+            "Zero",
+            "Blank"
+        ],
+        correct: "Love"
+    },
+
+    {
+        question: "Which Grand Slam tennis tournament is played on grass?",
+        answers: [
+            "Wimbledon",
+            "French Open",
+            "US Open",
+            "Australian Open"
+        ],
+        correct: "Wimbledon"
+    },
+
+    {
+        question: "Which tennis player is famous for the nickname 'King of Clay'?",
+        answers: [
+            "Rafael Nadal",
+            "Roger Federer",
+            "Novak Djokovic",
+            "Andy Murray"
+        ],
+        correct: "Rafael Nadal"
+    },
+
+    {
+        question: "Which tennis tournament is played in Paris?",
+        answers: [
+            "French Open",
+            "Wimbledon",
+            "US Open",
+            "Australian Open"
+        ],
+        correct: "French Open"
+    },
+
+    {
+        question: "How many Grand Slam tournaments are played in tennis each year?",
+        answers: [
+            "4",
+            "3",
+            "5",
+            "6"
+        ],
+        correct: "4"
+    },
+
+    {
+        question: "Which tennis player has won Grand Slam titles on all three major court surfaces?",
+        answers: [
+            "Novak Djokovic",
+            "Pete Sampras",
+            "John McEnroe",
+            "Boris Becker"
+        ],
+        correct: "Novak Djokovic"
+    },
+
+    {
+        question: "Which sport uses the terms 'birdie' and 'eagle'?",
+        answers: [
+            "Golf",
+            "Tennis",
+            "Cricket",
+            "Baseball"
+        ],
+        correct: "Golf"
+    },
+
+    {
+        question: "How many holes are normally played in a full round of golf?",
+        answers: [
+            "18",
+            "9",
+            "20",
+            "12"
+        ],
+        correct: "18"
+    },
+
+    {
+        question: "Which country is widely regarded as the birthplace of modern golf?",
+        answers: [
+            "Scotland",
+            "England",
+            "United States",
+            "Ireland"
+        ],
+        correct: "Scotland"
+    },
+
+    {
+        question: "Which sport features the Tour de France?",
+        answers: [
+            "Cycling",
+            "Running",
+            "Swimming",
+            "Motor racing"
+        ],
+        correct: "Cycling"
+    },
+
+    {
+        question: "How many rings are on the Olympic symbol?",
+        answers: [
+            "5",
+            "4",
+            "6",
+            "7"
+        ],
+        correct: "5"
+    },
+
+    {
+        question: "Which city hosted the 2016 Summer Olympics?",
+        answers: [
+            "Rio de Janeiro",
+            "London",
+            "Tokyo",
+            "Beijing"
+        ],
+        correct: "Rio de Janeiro"
+    },
+
+    {
+        question: "Which sport is Usain Bolt famous for?",
+        answers: [
+            "Sprint running",
+            "Swimming",
+            "Cycling",
+            "Long jump"
+        ],
+        correct: "Sprint running"
+    },
+
+    {
+        question: "Which athlete is nicknamed 'Lightning Bolt'?",
+        answers: [
+            "Usain Bolt",
+            "Tyson Gay",
+            "Mo Farah",
+            "Yohan Blake"
+        ],
+        correct: "Usain Bolt"
+    },
+
+    {
+        question: "Which sport uses a pommel horse?",
+        answers: [
+            "Gymnastics",
+            "Equestrian",
+            "Wrestling",
+            "Diving"
+        ],
+        correct: "Gymnastics"
+    },
+
+    {
+        question: "Which sport uses a shuttlecock?",
+        answers: [
+            "Badminton",
+            "Tennis",
+            "Table tennis",
+            "Squash"
+        ],
+        correct: "Badminton"
+    },
+
+    {
+        question: "Which country is famous for the All Blacks rugby team?",
+        answers: [
+            "New Zealand",
+            "Australia",
+            "South Africa",
+            "England"
+        ],
+        correct: "New Zealand"
+    },
+
+    {
+        question: "Which sport is played at Wimbledon?",
+        answers: [
+            "Tennis",
+            "Cricket",
+            "Golf",
+            "Rugby"
+        ],
+        correct: "Tennis"
+    },
+
+    {
+        question: "Which sport is associated with the Stanley Cup?",
+        answers: [
+            "Ice hockey",
+            "Basketball",
+            "Baseball",
+            "American football"
+        ],
+        correct: "Ice hockey"
+    },
+
+    {
+        question: "Which country is famous for the Formula 1 Grand Prix held in Monaco?",
+        answers: [
+            "Monaco",
+            "France",
+            "Italy",
+            "Spain"
+        ],
+        correct: "Monaco"
+    },
+
+    {
+        question: "What does F1 stand for in Formula 1?",
+        answers: [
+            "Formula One",
+            "Fast One",
+            "First Racing",
+            "Formula Racing"
+        ],
+        correct: "Formula One"
+    },
+
+    {
+        question: "Which sport is played at the Super Bowl?",
+        answers: [
+            "American football",
+            "Baseball",
+            "Basketball",
+            "Ice hockey"
+        ],
+        correct: "American football"
+    },
+
+    {
+        question: "Which country won the 2023 Cricket World Cup?",
+        answers: [
+            "Australia",
+            "India",
+            "England",
+            "South Africa"
+        ],
+        correct: "Australia"
+    }
+
+],
+    history: [
+
+    {
+        question: "Which ancient civilization built the pyramids at Giza?",
+        answers: [
+            "Ancient Egyptians",
+            "Romans",
+            "Greeks",
+            "Persians"
+        ],
+        correct: "Ancient Egyptians"
+    },
+
+    {
+        question: "Who was the first president of the United States?",
+        answers: [
+            "George Washington",
+            "Thomas Jefferson",
+            "Abraham Lincoln",
+            "John Adams"
+        ],
+        correct: "George Washington"
+    },
+
+    {
+        question: "Which city was buried by Mount Vesuvius in AD 79?",
+        answers: [
+            "Pompeii",
+            "Athens",
+            "Sparta",
+            "Carthage"
+        ],
+        correct: "Pompeii"
+    },
+
+    {
+        question: "Who was the first emperor of Rome?",
+        answers: [
+            "Augustus",
+            "Julius Caesar",
+            "Nero",
+            "Constantine"
+        ],
+        correct: "Augustus"
+    },
+
+    {
+        question: "Which civilization developed democracy in Athens?",
+        answers: [
+            "Ancient Greeks",
+            "Romans",
+            "Egyptians",
+            "Persians"
+        ],
+        correct: "Ancient Greeks"
+    },
+
+    {
+        question: "Who was the famous Macedonian conqueror who created a vast empire?",
+        answers: [
+            "Alexander the Great",
+            "Julius Caesar",
+            "Hannibal",
+            "Cyrus the Great"
+        ],
+        correct: "Alexander the Great"
+    },
+
+    {
+        question: "Which ancient people are famous for developing cuneiform writing?",
+        answers: [
+            "Sumerians",
+            "Romans",
+            "Vikings",
+            "Aztecs"
+        ],
+        correct: "Sumerians"
+    },
+
+    {
+        question: "Which empire was centered in the city of Rome?",
+        answers: [
+            "Roman Empire",
+            "Mali Empire",
+            "Ottoman Empire",
+            "Mongol Empire"
+        ],
+        correct: "Roman Empire"
+    },
+
+    {
+        question: "Who was known as the Maid of Orléans?",
+        answers: [
+            "Joan of Arc",
+            "Cleopatra",
+            "Marie Antoinette",
+            "Queen Victoria"
+        ],
+        correct: "Joan of Arc"
+    },
+
+    {
+        question: "Which document limited the power of the English king in 1215?",
+        answers: [
+            "Magna Carta",
+            "Declaration of Independence",
+            "Bill of Rights",
+            "Treaty of Versailles"
+        ],
+        correct: "Magna Carta"
+    },
+
+    {
+        question: "Who was the first emperor of the Mongol Empire?",
+        answers: [
+            "Genghis Khan",
+            "Kublai Khan",
+            "Attila the Hun",
+            "Tamerlane"
+        ],
+        correct: "Genghis Khan"
+    },
+
+    {
+        question: "Which empire was ruled by Mansa Musa?",
+        answers: [
+            "Mali Empire",
+            "Songhai Empire",
+            "Roman Empire",
+            "Ottoman Empire"
+        ],
+        correct: "Mali Empire"
+    },
+
+    {
+        question: "Mansa Musa is famous for making a pilgrimage to which holy city?",
+        answers: [
+            "Mecca",
+            "Jerusalem",
+            "Rome",
+            "Medina"
+        ],
+        correct: "Mecca"
+    },
+
+    {
+        question: "Which West African empire followed the Mali Empire?",
+        answers: [
+            "Songhai Empire",
+            "Roman Empire",
+            "Zulu Kingdom",
+            "Kongo Kingdom"
+        ],
+        correct: "Songhai Empire"
+    },
+
+    {
+        question: "Which African kingdom was famously ruled by Shaka?",
+        answers: [
+            "Zulu Kingdom",
+            "Mali Empire",
+            "Songhai Empire",
+            "Buganda Kingdom"
+        ],
+        correct: "Zulu Kingdom"
+    },
+
+    {
+        question: "Who founded the Zulu Kingdom's powerful military system?",
+        answers: [
+            "Shaka Zulu",
+            "Mansa Musa",
+            "Haile Selassie",
+            "Menelik II"
+        ],
+        correct: "Shaka Zulu"
+    },
+
+    {
+        question: "Which Ethiopian emperor defeated Italy at the Battle of Adwa?",
+        answers: [
+            "Menelik II",
+            "Haile Selassie",
+            "Tewodros II",
+            "Yohannes IV"
+        ],
+        correct: "Menelik II"
+    },
+
+    {
+        question: "In which year did the Battle of Adwa take place?",
+        answers: [
+            "1896",
+            "1885",
+            "1905",
+            "1914"
+        ],
+        correct: "1896"
+    },
+
+    {
+        question: "Which African country was historically known for maintaining its independence during the European colonial period?",
+        answers: [
+            "Ethiopia",
+            "Nigeria",
+            "Kenya",
+            "Ghana"
+        ],
+        correct: "Ethiopia"
+    },
+
+    {
+        question: "Who became South Africa's first Black president in 1994?",
+        answers: [
+            "Nelson Mandela",
+            "Desmond Tutu",
+            "Thabo Mbeki",
+            "F. W. de Klerk"
+        ],
+        correct: "Nelson Mandela"
+    },
+
+    {
+        question: "How many years did Nelson Mandela spend in prison?",
+        answers: [
+            "27 years",
+            "15 years",
+            "20 years",
+            "30 years"
+        ],
+        correct: "27 years"
+    },
+
+    {
+        question: "Which country gained independence from Britain in 1957 and was formerly known as the Gold Coast?",
+        answers: [
+            "Ghana",
+            "Nigeria",
+            "Kenya",
+            "Uganda"
+        ],
+        correct: "Ghana"
+    },
+
+    {
+        question: "Who became Ghana's first prime minister and later president?",
+        answers: [
+            "Kwame Nkrumah",
+            "Jomo Kenyatta",
+            "Julius Nyerere",
+            "Patrice Lumumba"
+        ],
+        correct: "Kwame Nkrumah"
+    },
+
+    {
+        question: "Who was the first president of independent Tanzania?",
+        answers: [
+            "Julius Nyerere",
+            "Kwame Nkrumah",
+            "Jomo Kenyatta",
+            "Kenneth Kaunda"
+        ],
+        correct: "Julius Nyerere"
+    },
+
+    {
+        question: "Who became Kenya's first president after independence?",
+        answers: [
+            "Jomo Kenyatta",
+            "Daniel arap Moi",
+            "Tom Mboya",
+            "Mwai Kibaki"
+        ],
+        correct: "Jomo Kenyatta"
+    },
+
+    {
+        question: "Who was the first president of the Democratic Republic of the Congo?",
+        answers: [
+            "Joseph Kasa-Vubu",
+            "Patrice Lumumba",
+            "Mobutu Sese Seko",
+            "Laurent Kabila"
+        ],
+        correct: "Joseph Kasa-Vubu"
+    },
+
+    {
+        question: "Who was the first prime minister of the Democratic Republic of the Congo?",
+        answers: [
+            "Patrice Lumumba",
+            "Joseph Kasa-Vubu",
+            "Mobutu Sese Seko",
+            "Laurent Kabila"
+        ],
+        correct: "Patrice Lumumba"
+    },
+
+    {
+        question: "Which European explorer is traditionally associated with reaching the Americas in 1492?",
+        answers: [
+            "Christopher Columbus",
+            "Vasco da Gama",
+            "Ferdinand Magellan",
+            "Marco Polo"
+        ],
+        correct: "Christopher Columbus"
+    },
+
+    {
+        question: "Who was the first person to circumnavigate the Earth?",
+        answers: [
+            "Ferdinand Magellan's expedition",
+            "Christopher Columbus",
+            "Vasco da Gama",
+            "Marco Polo"
+        ],
+        correct: "Ferdinand Magellan's expedition"
+    },
+
+    {
+        question: "Which explorer reached India by sea from Europe around the Cape of Good Hope?",
+        answers: [
+            "Vasco da Gama",
+            "Christopher Columbus",
+            "James Cook",
+            "Ferdinand Magellan"
+        ],
+        correct: "Vasco da Gama"
+    },
+
+    {
+        question: "Which revolution began in France in 1789?",
+        answers: [
+            "French Revolution",
+            "Industrial Revolution",
+            "Russian Revolution",
+            "American Revolution"
+        ],
+        correct: "French Revolution"
+    },
+
+    {
+        question: "Who was the French military leader who became emperor in 1804?",
+        answers: [
+            "Napoleon Bonaparte",
+            "Louis XIV",
+            "Charles de Gaulle",
+            "Robespierre"
+        ],
+        correct: "Napoleon Bonaparte"
+    },
+
+    {
+        question: "Which battle marked Napoleon's final defeat in 1815?",
+        answers: [
+            "Waterloo",
+            "Austerlitz",
+            "Trafalgar",
+            "Leipzig"
+        ],
+        correct: "Waterloo"
+    },
+
+    {
+        question: "Which war was fought between the Union and Confederacy in the United States?",
+        answers: [
+            "American Civil War",
+            "Revolutionary War",
+            "War of 1812",
+            "Mexican-American War"
+        ],
+        correct: "American Civil War"
+    },
+
+    {
+        question: "Who was the U.S. president during most of the American Civil War?",
+        answers: [
+            "Abraham Lincoln",
+            "George Washington",
+            "Andrew Jackson",
+            "Ulysses S. Grant"
+        ],
+        correct: "Abraham Lincoln"
+    },
+
+    {
+        question: "Which event officially ended World War I?",
+        answers: [
+            "Treaty of Versailles",
+            "Treaty of Paris",
+            "Yalta Conference",
+            "Potsdam Conference"
+        ],
+        correct: "Treaty of Versailles"
+    },
+
+    {
+        question: "In which year did World War I begin?",
+        answers: [
+            "1914",
+            "1918",
+            "1939",
+            "1905"
+        ],
+        correct: "1914"
+    },
+
+    {
+        question: "In which year did World War II begin in Europe?",
+        answers: [
+            "1939",
+            "1941",
+            "1945",
+            "1935"
+        ],
+        correct: "1939"
+    },
+
+    {
+        question: "Which event brought World War II in Europe to an end?",
+        answers: [
+            "Germany's surrender",
+            "The Treaty of Versailles",
+            "The League of Nations",
+            "The Munich Agreement"
+        ],
+        correct: "Germany's surrender"
+    },
+
+    {
+        question: "Who was the British prime minister for much of World War II?",
+        answers: [
+            "Winston Churchill",
+            "Neville Chamberlain",
+            "Clement Attlee",
+            "Anthony Eden"
+        ],
+        correct: "Winston Churchill"
+    },
+
+    {
+        question: "Which city was the first to experience an atomic bomb attack during World War II?",
+        answers: [
+            "Hiroshima",
+            "Tokyo",
+            "Kyoto",
+            "Osaka"
+        ],
+        correct: "Hiroshima"
+    },
+
+    {
+        question: "Which international organization was founded in 1945?",
+        answers: [
+            "United Nations",
+            "European Union",
+            "African Union",
+            "NATO"
+        ],
+        correct: "United Nations"
+    },
+
+    {
+        question: "Which wall became a major symbol of the Cold War?",
+        answers: [
+            "Berlin Wall",
+            "Great Wall of China",
+            "Hadrian's Wall",
+            "Western Wall"
+        ],
+        correct: "Berlin Wall"
+    },
+
+    {
+        question: "In which year did the Berlin Wall fall?",
+        answers: [
+            "1989",
+            "1985",
+            "1991",
+            "1979"
+        ],
+        correct: "1989"
+    },
+
+    {
+        question: "Who was the Soviet leader during much of World War II?",
+        answers: [
+            "Joseph Stalin",
+            "Vladimir Lenin",
+            "Mikhail Gorbachev",
+            "Nikita Khrushchev"
+        ],
+        correct: "Joseph Stalin"
+    },
+
+    {
+        question: "Who led the Indian independence movement using nonviolent resistance?",
+        answers: [
+            "Mahatma Gandhi",
+            "Jawaharlal Nehru",
+            "Subhas Chandra Bose",
+            "Muhammad Ali Jinnah"
+        ],
+        correct: "Mahatma Gandhi"
+    },
+
+    {
+        question: "Which country became independent from Britain in 1947?",
+        answers: [
+            "India",
+            "Egypt",
+            "Kenya",
+            "Ghana"
+        ],
+        correct: "India"
+    },
+
+    {
+        question: "Who was the first woman to serve as Prime Minister of the United Kingdom?",
+        answers: [
+            "Margaret Thatcher",
+            "Theresa May",
+            "Queen Elizabeth II",
+            "Angela Merkel"
+        ],
+        correct: "Margaret Thatcher"
+    },
+
+    {
+        question: "Which ancient civilization built Machu Picchu?",
+        answers: [
+            "Inca",
+            "Maya",
+            "Aztec",
+            "Roman"
+        ],
+        correct: "Inca"
+    },
+
+    {
+        question: "Which civilization developed the famous calendar and cities such as Tikal?",
+        answers: [
+            "Maya",
+            "Inca",
+            "Aztec",
+            "Egyptian"
+        ],
+        correct: "Maya"
+    },
+
+    {
+        question: "Which ancient civilization was centered in what is now Mexico and had its capital at Tenochtitlan?",
+        answers: [
+            "Aztec",
+            "Inca",
+            "Maya",
+            "Olmec"
+        ],
+        correct: "Aztec"
+    },
+
+    {
+        question: "Which ancient people built the Colosseum?",
+        answers: [
+            "Romans",
+            "Greeks",
+            "Persians",
+            "Phoenicians"
+        ],
+        correct: "Romans"
+    }
+
 ]
 
 
