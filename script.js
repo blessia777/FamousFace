@@ -3347,7 +3347,7 @@ moviesDaily: [
     }
 
 ]
-
+};
 
 // Get selected category
 const urlParams = new URLSearchParams(window.location.search);
