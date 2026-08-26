@@ -3408,57 +3408,71 @@ function seededShuffle(array, seed) {
 // Get Daily Challenge questions
 function getDailyChallengeQuestions() {
 
-    // Daily Challenge categories
-    const categories = [
-        "rap",
-        "movies",
-        "music",
-        "sports",
-        "history"
-    ];
+    // One question from each category
+   const categories = [
+    "music",
+    "rap",
+    "movies",
+    "sports",
+    "history"
+];
+    const dailyQuestions = [];
 
-    const seed = getDailySeed();
+    // Get today's day number
+    const today = new Date();
 
-    let dailyQuestions = [];
+    const dayNumber =
+        Math.floor(
+            Date.UTC(
+                today.getFullYear(),
+                today.getMonth(),
+                today.getDate()
+            ) / 86400000
+        );
 
-    // Select 1 question from each category
+    // Select one question from each category
     categories.forEach((categoryName, index) => {
 
         const categoryQuestions =
-            quizData[categoryName] || [];
+            dailyChallengeData[categoryName] || [];
 
         if (categoryQuestions.length === 0) {
+
             console.warn(
-                `No questions found for category: ${categoryName}`
+                `No Daily Challenge questions found for: ${categoryName}`
             );
+
             return;
         }
 
-        // Shuffle questions using today's seed
+        // Create a fixed shuffled order for this category
         const shuffled =
             seededShuffle(
                 categoryQuestions,
-                seed + index
+                5000 + index * 1000
             );
 
-        // Take exactly 1 question
-        dailyQuestions.push(shuffled[0]);
+        // Select a different question each day
+        const questionIndex =
+            dayNumber % shuffled.length;
+
+        dailyQuestions.push(
+            shuffled[questionIndex]
+        );
     });
 
-    // Shuffle the final 5 questions
+    // Shuffle the five questions
     return seededShuffle(
         dailyQuestions,
-        seed + 100
+        dayNumber + 100
     );
 }
-
 
 
 // Get questions
 const questions = isDailyChallenge
     ? getDailyChallengeQuestions()
     : (quizData[category] || quizData.music);
-
 // Quiz variables
 let currentQuestion = 0;
 let score = 0;
